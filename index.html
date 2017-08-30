@@ -5,26 +5,69 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <meta name="google-signin-client_id" content="474573588272-vnf52qnfmlgl04kgugl8hom6eab31e4n.apps.googleusercontent.com
+.apps.googleusercontent.com">
+
+    <link href = "stype.css" rel="stylesheet">
+
     <!-- Bootstrap CSS -->
 <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css" rel="stylesheet" integrity="sha384-Xqcy5ttufkC3rBa8EdiAyA1VgOGrmel2Y+wxm4K3kI3fcjTWlDWrlnxyD6hOi3PF" crossorigin="anonymous">  </head>
   <body>
     <h1>MathTracker</h1>
     <!--Navbar-->
-    <nav class="navbar navbar-default">
+
+   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <a class="navbar-brand" href="#">MathTracker</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href=/app.html>App</a></li>
-      <li><a href=#questions>Questions</a></li>
 
-    </ul>
+    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-2" aria-expanded="false" style="height: 1px;">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href=app.html>App</a></li>
+
+
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  </li>
+      </ul>
+    </div>
   </div>
 </nav>
-    <a name ="questions">
-    <div class="col-lg-4">
+
+
+    <div class="col-lg-5">
             <div class="bs-component">
               <h2>What is the AMC 10/12?</h2>
                 <p>The AMC 10 and AMC 12 are both 25-question, 75-minute, multiple choice examinations in high school mathematics designed to promote the development and enhancement of problem-solving skills.</p>
@@ -37,20 +80,23 @@
                 <p>These competitions are administered around the country on Tuesday, Feb. 7, 2017 and/or Wednesday, Feb. 15, 2017.
                     The AMC 10/12 provides an opportunity for high school students to develop positive attitudes towards analytical thinking and mathematics that can assist in future careers.
                     The AMC 10/12 is the first in a series of competitions that eventually lead all the way to the International Mathematical Olympiad (see Invitational Competitions).</p>
-
+            </div></div>
+              <div class = "col-lg-5"><div class = "bs-component">
             <h2>What is the difference between the A and B versions of the AMC 10 and 12?</h2>
             <p>Both the A and the B versions of the AMC 10 and the AMC 12 have the same number of questions,
-              the same scoring and the same rules for administration. T
-              he only differences are the competition dates and that each version has a distinct set of questions,
+              the same scoring and the same rules for administration. The only differences are the competition dates and that each version has a distinct set of questions,
               although the two examinations are designed to be equal in difficulty and distribution of topics.
               Schools can order one or both versions of the tests, so long as they pay the appropriate registration fee for each competition date,
               and purchase the competition bundles for each date.
 
             </p>
-            </div></div></a>
+              </div></div></a>
+
 
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
