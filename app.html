@@ -1,153 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--Google Sign in-->
+        <meta name="google-signin-client_id" content="474573588272-vnf52qnfmlgl04kgugl8hom6eab31e4n.apps.googleusercontent.com
+            .apps.googleusercontent.com">
+        <!--CSS-->
+        <link href="stype.css" rel="stylesheet">
+        <style>
+            .center {
+                margin: auto;
+                width: 80%;
+                padding: 10px;
+            }
+            h1 {
+               margin: auto;
 
-  <meta name="google-signin-client_id" content="474573588272-vnf52qnfmlgl04kgugl8hom6eab31e4n.apps.googleusercontent.com
-.apps.googleusercontent.com">
-    <link href = "stype.css" rel="stylesheet">
-<style>
-.center {
-    margin: auto;
-    width: 80%;
-    padding: 10px;
-}
-h1 {
-   margin: auto;
-
-padding: 10px;
-}
-h4 {
-text-align: right
-}
-#wrapper {
-    width: 90%;
-    overflow: hidden; /* will contain if #first is longer than #second */
-}
-#first {
-    width: 80%;
-    height: 100%
-    float:left; /* add this */
-}
-#second {
-    overflow: hidden; /* if you don't want #second to wrap below #first */
-}
-</style>
-    <!-- Bootstrap CSS -->
-<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css" rel="stylesheet" integrity="sha384-Xqcy5ttufkC3rBa8EdiAyA1VgOGrmel2Y+wxm4K3kI3fcjTWlDWrlnxyD6hOi3PF" crossorigin="anonymous">  </head>
-  <body>
-    <h1>MathTracker</h1>
-    <!--Navbar-->
-
-   <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">MathTracker</a>
-    </div>
-
-    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-2" aria-expanded="false" style="height: 1px;">
-      <ul class="nav navbar-nav">
-        <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
-        <li class="active"><a href=app.html>App</a></li>
+            padding: 10px;
+            }
+            h4 {
+            text-align: right
+            }
 
 
-      </ul>
+            .150 {
+                float: left;
 
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <script>
-    function onSuccess(googleUser) {
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    }
-    function onFailure(error) {
-      console.log(error);
-    }
-    function renderButton() {
-      gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 240,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
-      });
-    }
-  </script>
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+            }
+            #right {
+                float: right;
+            }
 
-          <div class="g-signin2" data-onsuccess="onSignIn"></div>
-  </li>
-      </ul>
-    </div>
-  </div>
+        </style>
 
-</nav>
-    <ul class="pager">
-  <li><a href="#">Previous</a></li>
-  <li><a href="#">Next</a></li>
-</ul>
-    <div class="container">
-
-      <div class="bs-docs-section" >
-
-        <div class="row">
-          <div class="col-lg-10">
-            <div class="page-header">
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-Xqcy5ttufkC3rBa8EdiAyA1VgOGrmel2Y+wxm4K3kI3fcjTWlDWrlnxyD6hOi3PF" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1>MathTracker</h1>
+        <!--Navbar-->
+        <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">MathTracker</a>
             </div>
-              <ul class="nav nav-pills">
-    <li class="active"><a href="#"><h2 id="progress-bars">Scores this year</h2>
-                  <li><a href="#"><h2>Enter Scores </h2><span class="badge"></span></a></li>
-                  <li><a href="#"><h2>Previous Years</h2> <span class="badge"></span></a></li>
-    </ul>
-<div id = first>
-        <h3>2017 AMC 10A</h3>
-        <div class="progress">
-            <div class="progress-bar" style="width: 60%;"></div></div>
 
-        <h3>2017 AMC 10B</h3>
-        <div class="progress">
-            <div class="progress-bar" style="width: 60%;"></div></div>
-        <h3>2017 AMC 12A</h3>
-        <div class="progress">
-            <div class="progress-bar" style="width: 60%;"></div></div>
-        <h3>2017 AMC 12B</h3>
-        <div class="progress">
-            <div class="progress-bar" style="width: 60%;"></div></div>
-              <h3>2017 AIME I</h3>
-<div class="progress">
-    <div class="progress-bar progress-bar-info" style="width: 20%"></div></div>
- <h3>2017 AIME II</h3>
-              <div class="progress">
-                  <div class="progress-bar progress-bar-info" style="width: 20%"></div></div>
-                 <h3>USAJMO</h3>
+            <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-2" aria-expanded="false"
+                 style="height: 1px;">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href=app.html>App</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <!--Sign In-->
+                    <li><script>
+                            function onSuccess(googleUser) {
+                              console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+                            }
+                            function onFailure(error) {
+                              console.log(error);
+                            }
+                            function renderButton() {
+                              gapi.signin2.render('my-signin2', {
+                                'scope': 'profile email',
+                                'width': 240,
+                                'height': 50,
+                                'longtitle': true,
+                                'theme': 'dark',
+                                'onsuccess': onSuccess,
+                                'onfailure': onFailure
+                              });
+                            }
+                        </script>
+                        <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </nav>
 
-              <div class="progress">
-  <div class="progress-bar progress-bar" style="width: 30%"></div>
-                  <div class="progress-bar progress-bar-info" style="width: 10%"></div></div>
-                            <h3>USAMO</h3>
+        <ul class="pager">
+            <li><a href="#">Previous</a></li>
+            <li><a href="#">Next</a></li>
+        </ul>
 
-              <div class="progress">
+        <div class="bs-docs-section">
+        <div class="center">
+            <div class="row">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#"><h2 id="progress-bars">Scores this year</h2>
+                    <li><a href="#"><h2>Enter Scores </h2><span class="badge"></span></a></li>
+                    <li><a href="#"><h2>Previous Years</h2> <span class="badge"></span></a></li>
+                </ul>
+                <!--Scores-->
+                <div class="col-lg-8">
+                    <h3>2017 AMC 10A</h3>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="120"
+                             aria-valuemin="0" aria-valuemax="150">120/150
+                        </div>
+                    </div>
 
-  <div class="progress-bar progress-bar" style="width: 30%"></div>
-                  <div class="progress-bar progress-bar-info" style="width: 10%"></div>
+                    <h3>2017 AMC 10B</h3>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="120"
+                             aria-valuemin="0" aria-valuemax="150">120/150
+                        </div>
+                    </div>
 
-<div id="second>"><h4>150</h4></div>
+                    <h3>2017 AMC 12A</h3>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="120"
+                             aria-valuemin="0" aria-valuemax="150">120/150
+                        </div>
+                    </div>
 
+                    <h3>2017 AMC 12B</h3>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="120"
+                             aria-valuemin="0" aria-valuemax="150">120/150
+                        </div>
+                    </div>
 
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+                    <h3>2017 AIME I</h3>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="5" aria-valuemin="0"
+                             aria-valuemax="15" style="width: 33%">5/15
+                        </div>
+                    </div>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  </body>
+                    <h3>2017 AIME II</h3>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="10" aria-valuemin="0"
+                             aria-valuemax="15" style="width: 66%">10/15
+                        </div>
+                    </div>
+
+                    <h3>USAJMO</h3>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="120"
+                             aria-valuemin="0" aria-valuemax="150">220/300
+                        </div>
+                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="10" aria-valuemin="0"
+                             aria-valuemax="15" style="width: 33%">
+                        </div>
+                    </div>
+
+                    <h3>USAMO</h3>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 46.5%;" aria-valuenow="140"
+                             aria-valuemin="0" aria-valuemax="150">190/300
+                        </div>
+                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="5" aria-valuemin="0"
+                             aria-valuemax="15" style="width: 16.5%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!--Google Sign in-->
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <!-- jQuery first, then Tether, then Bootstrap JS. -->
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+                    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+                    crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+                    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+                    crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+                    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+                    crossorigin="anonymous"></script>
+    </body>
 </html>
