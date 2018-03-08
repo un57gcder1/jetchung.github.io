@@ -1,0 +1,41 @@
+https://docs.google.com/spreadsheets/d/1pT8kPHk8TU7C-kxeg5_laivKMD4Zs012-ukTR8tlGIY/edit?usp=sharing
+
+select ID where
+
+=QUERY(index!B2:H8,"select C,D,H where B = 'AMC 10' OR (B = 'AMC 8')")
+
+=QUERY(user_todo!A1:B2, "select B,C where (A > 4) AND (A < 9)" )
+
+AND (C > 4) AND (C = 9) and D = 'Geometry' OR  D = 'Counting and Probability' OR  D = 'Number Theory' OR  D = 'Algebra'")
+
+
+C-Difficulty
+D - Subjects
+H - ID
+E - problems
+B - Sources
+F- answer
+
+=QUERY(index!A2:H8,"select E,F,G,H where ((B = 'AMC 10') OR (B = 'AMC 8')) AND ((C > 4) AND (C < 9)) AND ((D = 'Geometry') OR  (D = 'Counting and Probability') OR  (D = 'Number Theory') OR  (D = 'Algebra'))")
+
+
+=QUERY(index!A2:H8,"select E,F,G,H where ((B = 'AMC 10') OR (B = 'AMC 8')) AND ((C > 4) AND (C < 9)) AND ((D = 'Geometry') OR  (D = 'Counting and Probability') OR  (D = 'Number Theory') OR  (D = 'Algebra'))")
+
+
+SELECT E,F,G,H WHERE B = 'AMC 10' OR B = 'AMC 8' AND C < 4 AND C > 1 AND D = 'Geometry' OR D = 'Counting and Probability' OR  D = 'Number Theory' OR  D = 'Algebra'
+function init() {
+  Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/1pT8kPHk8TU7C-kxeg5_laivKMD4Zs012-ukTR8tlGIY/edit?usp=sharing',
+                   callback: function(data, tabletop) {
+                     global all_questions = data;
+                   },
+                   simpleSheet: true }
+                    query: select B,C,D,E,F where (C >= 2 AND C <= 3) AND ((B = 'AMC 8') OR (B = 'AMC 10')) AND D = 'Geometry' limit 6
+}
+window.addEventListener('DOMContentLoaded', init)
+var Dpotential = all_questions.filter(data{Difficulty} => user_difficulty <= Difficulty <= user_difficulty+3);
+console.log(Dpotential)
+function findQuestions(user_subjects, user_difficulty, user_sources) {
+  //var Spotential = data.filter(subject => [user_subjects].indexOf(subject) >= 0  );
+
+
+}
