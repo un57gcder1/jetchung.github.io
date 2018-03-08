@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>EduPro</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css"></link>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+
+<meta name="google-signin-client_id"
+      content="672432683059-rv7l593oe0rp9q775ro08r44i2tl05ud.apps.googleusercontent.com	">
+
+<div class="jumbotron">
+    <div align="center">
+        <img src="img/logo.png" style="width:200px"></div>
+    <p class="lead"></p>
+    <hr class="my-4">
+    <p class="lead">
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Homework</h2>
+
+                <div class="dropdown show">
+                    <div id="myDIV" class="header">
+                        <h2>To Do</h2>
+
+                        <div align="center">
+                            <form method="post">
+                                <input style="color:black" type="text" id="myInput" placeholder="Title..."
+                                       name="activity"/>
+
+                                <span onclick="newElement()" id="myInput" class="addBtn">Add</span>
+                            </form>
+                        </div>
+                    </div>
+
+                    <ul id="myUL"> <!--load from flask? or drive? wtv backend -->
+
+                    </ul>
+
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2>Schedule</h2>
+
+                <div class="progress">
+                    <div id="progress-thing" class="progress-bar progress-bar-striped active" role="progressbar"
+                         aria-valuemin="0" aria-valuemax="100" width="0%"><font size="3"><p id="percent"></p>
+                    </font>
+                    </div>
+                </div>
+
+                <hr>
+
+
+
+            <div class="row">
+                <div class="col-md-9">
+                    <br><br><br><br>
+
+                    <H3>How to use EduPro?</H3>
+
+                    <p>Input in the textbox things such as essay due 11/3, soccer game 4-5pm, math homework 1 hour,
+                        and we will write it in your schedule for you</p>
+                </div>
+                <!-- /container -->
+    </p>
+</div>
+
+<script>
+document.getElementById("progress-thing").style.width = "0%";
+    document.getElementById("percent").innerHTML = "0%";
+</script>
+<!--<script src="cookies.js"></script>-->
+
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+<script src="js/list.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>/* Include the padding and border in an element's total width and height */
+        * {
+        box-sizing: border-box;
+        }
+
+        /* Remove margins and padding from the list */
+        ul {
+        margin: 0;
+        padding: 0;
+        }
+        #progress-thing {
+        width: 300px;
+        }
+        /* Style the list items */
+        ul li {
+        cursor: pointer;
+        position: relative;
+        padding: 12px 8px 12px 40px;
+        background: #eee;
+        font-size: 18px;
+        transition: 0.2s;
+
+        /* make the list items unselectable */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        }
+
+        /* Set all odd list items to a different color (zebra-stripes) */
+        ul li:nth-child(odd) {
+        background: #f9f9f9;
+        }
+
+        /* Darker background-color on hover */
+        ul li:hover {
+        background: #ddd;
+        }
+
+        /* When clicked on, add a background color and strike out text */
+        ul li.checked {
+        background: #888;
+        color: #fff;
+        text-decoration: line-through;
+        }
+
+        /* Add a "checked" mark when clicked on */
+        ul li.checked::before {
+        content: '';
+        position: absolute;
+        border-color: #fff;
+        border-style: solid;
+        border-width: 0 2px 2px 0;
+        top: 10px;
+        left: 16px;
+        transform: rotate(45deg);
+        height: 15px;
+        width: 7px;
+        }
+
+        /* Style the close button */
+        .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 12px 16px 12px 16px;
+        }
+
+        .close:hover {
+        background-color: #008ae6;
+        color: black;
+        }
+
+        /* Style the header */
+        .header {
+        background-color: #008ae6;
+        padding: 30px 40px;
+        color: white;
+        text-align: center;
+        }
+
+        /* Clear floats after the header */
+        .header:after {
+        content: "";
+        display: table;
+        clear: both;
+        }
+
+        /* Style the input */
+        input {
+        border: none;
+        width: 75%;
+        padding: 10px;
+        float: left;
+        color: #f00;
+
+        font-size: 16px;
+        }
+
+        /* Style the "Add" button */
+        .addBtn {
+        padding: 10px;
+        width: 25%;
+        background: #d9d9d9;
+        color: #555;
+        float: left;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        }
+
+        .addBtn:hover {
+        background-color: #bbb;
+        }
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id"
+          content="530515677661-biqu1b2vfp542v5dd8mdoschljau9f9s.apps.googleusercontent.com">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .dropdown-submenu {
+        position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -1px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+
+<meta name="google-signin-client_id"
+      content="672432683059-rv7l593oe0rp9q775ro08r44i2tl05ud.apps.googleusercontent.com	">
+
+<h1></h1>
+
+<div class="jumbotron">
+    <div align="center"><img src="logo.png" width=200px style="PADDING-LEFT: 30px">
+
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    </div>
+
+    <p class="lead"></p>
+    <hr class="my-4">
+    <p class="lead">
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Homework</h2>
+
+                <div class="dropdown show">
+                    <div id="myDIV" class="header">
+                        <h2>To Do</h2>
+
+                        <div align="center">
+                            <form action='/homepage' method="post">
+                                <input style="color:black" type="text" id="myInput" placeholder="Title..."
+                                       name="activity">
+
+                                <input style="color:black" type="Add" id="myInput" placeholder="Add"
+                                       onclick="newElement()" class="addBtn" name="activity">
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <ul id="myUL">
+                        {% for act in List_monday %}
+                        <li>{{ act }}</li>
+                        {% endfor %}
+                        {% for act in List_tuesday %}
+                        <li>{{ act }}</li>
+                        {% endfor %}
+                        {% for act in List_thursday %}
+                        <li>{{ act }}</li>
+                        {% endfor %}
+                        {% for act in List_friday %}
+                        <li>{{ act }}</li>
+                        {% endfor %}
+                    </ul>
+
+                    <form action="/delete">
+                        <input style="color:black" type="submit" name="delete_database" value="Delete Database"
+                               class="addBtn">
+                    </form>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2>Schedule</h2>
+
+                <div class="progress">
+                    <div id="progress-thing" class="progress-bar progress-bar-striped active" role="progressbar"
+                         aria-valuemin="0" aria-valuemax="100" width="var(--width-bar)"><font size="3"
+
+                        <p id="hello">40%</p></font>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="container">
+
+                    <table class="table table-striped">
+
+                        <tbody>
+                        <tr>
+                            <td></td>
+                            <td>2:30</td>
+                            <td>3:30</td>
+                            <td>4:30</td>
+                            <td>5:30</td>
+                            <td>6:30</td>
+                            <td>7:30</td>
+                            <td>8:30</td>
+                            <td>9:30</td>
+
+                        </tr>
+                        <tr>
+                            <td>Monday</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Soccer</td>
+                            <td></td>
+                            <td>Piano Lesson</td>
+                            <td></td>
+
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Soccer</td>
+                            <td></td>
+                            <td>Study for test</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Soccer</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Essay due tomorrow</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Party</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>Sleep in</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>Church volunteering</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Soccer game</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-9">
+                    <br><br><br><br>
+
+                    <H3>How to use EduPro?</H3>
+
+                    <p>Input in the textbox things such as essay due 11/3, soccer game 4-5pm, math homework 1 hour,
+                        and we will write it in your schedule for you</p>
+                </div>
+                <!-- /container -->
+    </p>
+</div>
+<script>
+    $(document).ready(function(){
+      $('.dropdown-submenu a.test').on("click", function(e){
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
+    });
+
+
+
+</script>
+
+<script>
+
+var number = 5;
+var todo = 5;
+    value = (number-todo)/(number);
+update(value);
+function update(value) {
+    document.getElementById("progress-thing").style.width = (value*100).toFixed(0) + "%";
+    document.getElementById("hello").innerHTML = (value*100).toFixed(0) + "%";
+    }
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+
+var i;
+
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+        number -= 1;
+    if (close.className == "checked"){
+    todo -= 1;
+}
+
+rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrvalue = (number-todo)/(number);
+update(value);
+
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+        if (ev.target.className == "checked") {
+            todo -= 1
+            }
+        else {
+            todo += 1;
+            }
+            console.log("ru1n");
+
+    value = (number-todo)/(number);
+update(value);
+
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+
+    number += 1;
+    todo += 1;
+    value = (number-todo)/(number);
+update(value);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+
+
+
+</script>
+
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
