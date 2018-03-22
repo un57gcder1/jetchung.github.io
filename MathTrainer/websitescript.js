@@ -1,10 +1,31 @@
+function cache() {
+
+  solved = localStorage['solved']
+  if (solved) solved_str = JSON.parse(solved);
+  else {
+    localStorage['solved'] = [];
+    solved_str = [];
+  }
+
+  console.log(solved_list);
+
+  stored = localStorage['problems'];
+  if (stored) data = JSON.parse(stored);
+  else data = {
+    a: 'test',
+    b: [1, 2, 3]
+  };
+}
+
+
+window.onload = cache();
 
 
 function onSignIn(user) {
   var profile = user.getBasicProfile();
   $('#profile .name').text(profile.getName());
   $('#profile .email').text(profile.getEmail());
-  console.log(profile.getImageUrl());
+  //console.log(profile.getImageUrl());
   $("#profile_image").attr('src', profile.getImageUrl());
 
 }
@@ -13,7 +34,7 @@ function onSignIn(user) {
 function signOut() {
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function() {
-    console.log('User signed out.');
+  //  console.log('User signed out.');
   });
 }
 
@@ -30,56 +51,51 @@ function init() {
 }
 
 function showInfo(data, tabletop) {
-  console.log(data);
+//  console.log(data);
   localStorage['problems'] = JSON.stringify(data);
 
 
 
 
 }
-function myFunction() {
-
-  alert("hello");
-}
 
 window.addEventListener('DOMContentLoaded', init)
 
-function enter() {
-  var id = String(arguments[0]);
-  var answer = String(arguments[1]);
+function enter(id,answer) {
 
+
+
+  var id = String(id.id);
+  var answer = String(answer);
 
   var z = String('input-' + id);
-  alert(arguments[0]);
 
   var section = document.getElementById(id);
-  var ans = document.getElementById(z);
+  var ans = String(document.getElementById(z).value);
+
+
   var correct = document.getElementById('correct-'+id);
   var incorrect = document.getElementById('incorrect-'+id);
-  if ((ans == answer)) {
+
+  if (answer == ans) {
     correct.style = "";
-    incorrect.style = "none";
+    incorrect.style = "display: none";
+    solved_list.push(id);
+    localStorage['solved'] = JSON.stringify(solved_list);
 
 
 }
 else {
-  correct.style = "none";
-  incorrect.style = "inline";
+  correct.style = "display: none";
+  incorrect.style = "";
 
 }
 }
+
+
+
 function getData() {
-  var solved = localStorage['solved]']
-  if (solved) solved = Array.from(solved);
-  else {
-    localStorage['solved'] = [];
-  }
-  var stored = localStorage['problems'];
-  if (stored) data = JSON.parse(stored);
-  else data = {
-    a: 'test',
-    b: [1, 2, 3]
-  };
+
   var user_difficulty = document.getElementById("level").value;
 
   var user_subjects = [];
@@ -112,57 +128,55 @@ var C =  document.getElementById("Counting and Probability").checked;
     user_subjects.push("Counting and Probability");
 }
 
-    console.log(user_subjects);
+  //  console.log(user_subjects);
 
 
   div.innerHTML = "<ul></ul>";
-  console.log(problem_number);
+  //console.log(problem_number);
   for (i = 0; i < data.length; i++) {
     problem = data[i];
     if (Number(problem.Difficulty) <= Number(user_difficulty)) {
       if (Number(user_difficulty) <= Number(problem.Difficulty) + 1) {
-        console.log(Number(problem.Difficulty), Number(user_difficulty), Number(problem.Difficulty) + 1);
+      //  console.log(Number(problem.Difficulty), Number(user_difficulty), Number(problem.Difficulty) + 1);
 
         if (user_subjects.includes(problem.Subject)) {
 
             var answer = problem.Answer;
             var question = problem.Question;
-            var id = String(problem.unique_ID);
-            c += 1;
-            if (c <= problem_number) {
+            var id = problem.unique_ID;
+            if (solved.indexOf(id) < 0) {
+              c += 1;
 
+            if (c <= problem_number) {
               var x = 'correct-'+ id;
               var y = 'incorrect-' + id;
               var z = 'input-' + id;
-
-div.insertAdjacentHTML('beforeend',"<div id=id> \
-<div id = x class='alert alert-success' role='alert' style ='display: none;'>\
+div.insertAdjacentHTML('beforeend',`<div id="${id}"> \
+<div id = "${x}" class="alert alert-success" role="alert" style ="display: none;">\
 Your answer is correct! Congratulations! \
-  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>\
-    <span aria-hidden='true'>&times;</span>\
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">\
+    <span aria-hidden="true">&times;</span>\
   </button>\
 </div>\
-<div id = y class='alert alert-danger' role='alert' style ='display: none;'>\
-Your answer is incorrect. Try again. \
-  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>\
-    <span aria-hidden='true'>&times;</span>\
+<div id = "${y}" class="alert alert-danger" role="alert" style ="display: none;"">\
+Your answer is incorrect. We'll show you this problem again a little later. \
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">\
+    <span aria-hidden="true">&times;</span>\
   </button>\
 </div>\
- <h1>Problem " + c + "</h1>" + question + '<br></div>');
- var n = 10;
-   div.insertAdjacentHTML('beforeend',' <div class="input-group mb-3"> \
-   <script>\
-   var n = 10;\
-</script> \
-   <input type="text" class="form-control" id = z > \
+ <h1>Problem ${c}</h1>${question}<br></div>`);
+   div.insertAdjacentHTML('beforeend',`<div class="input-group mb-3"> \
+
+   <input type="text" class="form-control" id = "${z}" > \
    <div class="input-group-append"> \
-     <button class="btn btn-light" type="button" onclick ="enter(n,69);">Submit</button> \
+     <button class="btn btn-light" type="button" onclick ="enter(${id},\'${answer}\');">Submit</button> \
    </div>\
- </div>');
+ </div>`);
+
 
 
             }
-
+}
           }
         }
 
