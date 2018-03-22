@@ -1,20 +1,17 @@
 function cache() {
 
   solved = localStorage['solved']
-  if (solved) solved_str = JSON.parse(solved);
+  if (solved) {
+    solved_dic = solved.split(",");
+}
   else {
-    localStorage['solved'] = [];
-    solved_str = [];
+    solved_dic = [];
   }
 
-  console.log(solved_list);
 
   stored = localStorage['problems'];
   if (stored) data = JSON.parse(stored);
-  else data = {
-    a: 'test',
-    b: [1, 2, 3]
-  };
+  else data = {};
 }
 
 
@@ -80,8 +77,8 @@ function enter(id,answer) {
   if (answer == ans) {
     correct.style = "";
     incorrect.style = "display: none";
-    solved_list.push(id);
-    localStorage['solved'] = JSON.stringify(solved_list);
+    solved_dic.push(id);
+    localStorage['solved'] = solved_dic;
 
 
 }
@@ -144,7 +141,7 @@ var C =  document.getElementById("Counting and Probability").checked;
             var answer = problem.Answer;
             var question = problem.Question;
             var id = problem.unique_ID;
-            if (solved.indexOf(id) < 0) {
+            if (solved_dic.indexOf(id) < 0) {
               c += 1;
 
             if (c <= problem_number) {
