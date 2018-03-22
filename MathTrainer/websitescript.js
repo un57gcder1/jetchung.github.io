@@ -1,7 +1,4 @@
-function submit() {
 
-  alert("hello");
-}
 
 function onSignIn(user) {
   var profile = user.getBasicProfile();
@@ -40,12 +37,43 @@ function showInfo(data, tabletop) {
 
 
 }
+function myFunction() {
+
+  alert("hello");
+}
 
 window.addEventListener('DOMContentLoaded', init)
 
+function enter() {
+  var id = String(arguments[0]);
+  var answer = String(arguments[1]);
 
+
+  var z = String('input-' + id);
+  alert(arguments[0]);
+
+  var section = document.getElementById(id);
+  var ans = document.getElementById(z);
+  var correct = document.getElementById('correct-'+id);
+  var incorrect = document.getElementById('incorrect-'+id);
+  if ((ans == answer)) {
+    correct.style = "";
+    incorrect.style = "none";
+
+
+}
+else {
+  correct.style = "none";
+  incorrect.style = "inline";
+
+}
+}
 function getData() {
-
+  var solved = localStorage['solved]']
+  if (solved) solved = Array.from(solved);
+  else {
+    localStorage['solved'] = [];
+  }
   var stored = localStorage['problems'];
   if (stored) data = JSON.parse(stored);
   else data = {
@@ -97,13 +125,40 @@ var C =  document.getElementById("Counting and Probability").checked;
 
         if (user_subjects.includes(problem.Subject)) {
 
-
+            var answer = problem.Answer;
             var question = problem.Question;
+            var id = String(problem.unique_ID);
             c += 1;
             if (c <= problem_number) {
 
+              var x = 'correct-'+ id;
+              var y = 'incorrect-' + id;
+              var z = 'input-' + id;
 
-              div.insertAdjacentHTML('beforeend', "<h1>Problem " + c + "</h1>" + question + '<br><input type="text" id="input"></input> <button class="btn btn-default" type="button" onclick=submit();>Submit</button>');
+div.insertAdjacentHTML('beforeend',"<div id=id> \
+<div id = x class='alert alert-success' role='alert' style ='display: none;'>\
+Your answer is correct! Congratulations! \
+  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>\
+    <span aria-hidden='true'>&times;</span>\
+  </button>\
+</div>\
+<div id = y class='alert alert-danger' role='alert' style ='display: none;'>\
+Your answer is incorrect. Try again. \
+  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>\
+    <span aria-hidden='true'>&times;</span>\
+  </button>\
+</div>\
+ <h1>Problem " + c + "</h1>" + question + '<br></div>');
+ var n = 10;
+   div.insertAdjacentHTML('beforeend',' <div class="input-group mb-3"> \
+   <script>\
+   var n = 10;\
+</script> \
+   <input type="text" class="form-control" id = z > \
+   <div class="input-group-append"> \
+     <button class="btn btn-light" type="button" onclick ="enter(n,69);">Submit</button> \
+   </div>\
+ </div>');
 
 
             }
@@ -114,47 +169,4 @@ var C =  document.getElementById("Counting and Probability").checked;
       }
 
     }
-    timer()
-  }
-
-
-  function timer() {
-    var countDownDate = (document.getElementById("time").value);
-
-    var distance = "hello";
-
-    console.log(countDownDate);
-
-    // Set the date we're counting down to
-    var timeParts = countDownDate.split(":");
-
-    var hours = timeParts[0]
-    var minutes = timeParts[1]
-    var total_minutes = minutes + 60*hours;
-    console.log(total_minutes);
-    // Update the count down every 1 second
-    var x = setInterval(function() {
-
-        // Get todays date and time
-        var now = new Date().getTime();
-
-
-        // Find the distance between now an the count down date
-
-
-        var total_minutes = minutes + 60*hours;
-
-        var hours = Math.floor(minutes/60);
-        var minutes = total_minutes-60*hours;
-        // Output the result in an element with id="demo"
-        document.getElementById("demo").innerHTML = hours + "h "
-        + minutes + "m ";
-
-        // If the count down is over, write some text
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("demo").innerHTML = "EXPIRED";
-        }
-    }, 1000);
-
   }

@@ -39,3 +39,12 @@ function findQuestions(user_subjects, user_difficulty, user_sources) {
 
 
 }
+
+div.insertAdjacentHTML('beforeend',"<div id="+ id + "> \
+ <div class = 'alert alert-danger alert-dismissible ' id = 'alert-" + id +" role='alert'> \
+ \
+ <button type ='button' class='close' data-dismiss='alert' aria-label='Close'> \
+ <span aria-hidden='true'>&times;</span>\
+ </button> </div>\
+ <h1>Problem " + c + "</h1>" + question + '<br><input type="text" id="input-' + id + '></input>\
+  <button class="btn btn-default" onclick="submit() type="button">Submit</button></div>');
