@@ -155,6 +155,7 @@ var C =  document.getElementById("Counting and Probability").checked;
               var x = 'correct-'+ id;
               var y = 'incorrect-' + id;
               var z = 'input-' + id;
+              var source = problem.Source;
 div.insertAdjacentHTML('beforeend',`<div id="${id}"> \
 <div id = "${x}" class="alert alert-success" role="alert" style ="display: none;">\
 Your answer is correct! Congratulations! \
@@ -168,7 +169,7 @@ Your answer is incorrect. We'll show you this problem again a little later. \
     <span aria-hidden="true">&times;</span>\
   </button>\
 </div>\
- <h1>Problem ${c}</h1>${question}<br></div>`);
+ <h1>Problem ${c}</h1><h3>${source}</h3>${question}<br></div>`);
    div.insertAdjacentHTML('beforeend',`<div class="input-group mb-3"> \
 
    <input type="text" class="form-control" id = "${z}" > \
@@ -187,4 +188,6 @@ Your answer is incorrect. We'll show you this problem again a little later. \
       }
 
     }
+    if (c == 0);
+    alert("Error: We don't have enough problems on this topic difficulty");
   }
