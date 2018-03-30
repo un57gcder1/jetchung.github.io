@@ -19,6 +19,7 @@ window.onload = cache();
 
 
 function onSignIn(user) {
+  console.log("Foobar");
   var profile = user.getBasicProfile();
   $('#profile .name').text(profile.getName());
   $('#profile .email').text(profile.getEmail());
