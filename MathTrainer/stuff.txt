@@ -1,50 +1,233 @@
-https://docs.google.com/spreadsheets/d/1pT8kPHk8TU7C-kxeg5_laivKMD4Zs012-ukTR8tlGIY/edit?usp=sharing
+/Users/student/anaconda/bin/python /Users/student/Desktop/JetChung.github.io/MathTrainer/scrape.py
+http://artofproblemsolving.com/wiki/index.php?title=2002_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2002_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2003_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2003_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2004_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2004_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2005_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2005_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2006_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2006_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2007_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2007_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2008_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2008_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2009_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2009_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2010_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2010_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2011_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2011_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2012_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2012_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2013_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2013_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2014_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2014_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2015_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2015_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2016_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2016_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2017_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2017_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2018_AMC_10A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2018_AMC_10B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2002_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2002_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2003_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2003_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2004_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2004_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2005_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2005_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2006_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2006_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2007_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2007_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2008_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2008_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2009_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2009_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2010_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2010_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2011_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2011_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2012_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2012_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2013_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2013_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2014_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2014_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2015_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2015_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2016_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2016_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2017_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2017_AMC_12B_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2018_AMC_12A_Problems
+http://artofproblemsolving.com/wiki/index.php?title=2018_AMC_12B_Problems
 
-select ID where
+http://artofproblemsolving.com/wiki/index.php?title=1983_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1984_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1985_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1986_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1987_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1988_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1989_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1990_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1991_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1992_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1993_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1994_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1995_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1996_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1997_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1998_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1999_AIME_Problems
 
-=QUERY(index!B2:H8,"select C,D,H where B = 'AMC 10' OR (B = 'AMC 8')")
+http://artofproblemsolving.com/wiki/index.php?title=1983_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1984_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1985_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1986_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1987_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1988_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1989_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1990_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1991_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1992_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1993_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1994_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1995_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1996_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1997_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1998_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1999_AIME_Problems
 
-=QUERY(user_todo!A1:B2, "select B,C where (A > 4) AND (A < 9)" )
+http://artofproblemsolving.com/wiki/index.php?title=1983_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1984_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1985_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1986_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1987_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1988_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1989_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1990_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1991_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1992_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1993_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1994_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1995_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1996_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1997_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1998_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1999_AIME_Problems
 
-AND (C > 4) AND (C = 9) and D = 'Geometry' OR  D = 'Counting and Probability' OR  D = 'Number Theory' OR  D = 'Algebra'")
+http://artofproblemsolving.com/wiki/index.php?title=1983_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1984_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1985_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1986_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1987_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1988_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1989_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1990_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1991_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1992_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1993_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1994_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1995_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1996_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1997_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1998_AIME_Problems
+http://artofproblemsolving.com/wiki/index.php?title=1999_AIME_Problems
 
-
-C-Difficulty
-D - Subjects
-H - ID
-E - problems
-B - Sources
-F- answer
-
-=QUERY(index!A2:H8,"select E,F,G,H where ((B = 'AMC 10') OR (B = 'AMC 8')) AND ((C > 4) AND (C < 9)) AND ((D = 'Geometry') OR  (D = 'Counting and Probability') OR  (D = 'Number Theory') OR  (D = 'Algebra'))")
-
-
-=QUERY(index!A2:H8,"select E,F,G,H where ((B = 'AMC 10') OR (B = 'AMC 8')) AND ((C > 4) AND (C < 9)) AND ((D = 'Geometry') OR  (D = 'Counting and Probability') OR  (D = 'Number Theory') OR  (D = 'Algebra'))")
-
-
-SELECT E,F,G,H WHERE B = 'AMC 10' OR B = 'AMC 8' AND C < 4 AND C > 1 AND D = 'Geometry' OR D = 'Counting and Probability' OR  D = 'Number Theory' OR  D = 'Algebra'
-function init() {
-  Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/1pT8kPHk8TU7C-kxeg5_laivKMD4Zs012-ukTR8tlGIY/edit?usp=sharing',
-                   callback: function(data, tabletop) {
-                     global all_questions = data;
-                   },
-                   simpleSheet: true }
-                    query: select B,C,D,E,F where (C >= 2 AND C <= 3) AND ((B = 'AMC 8') OR (B = 'AMC 10')) AND D = 'Geometry' limit 6
-}
-window.addEventListener('DOMContentLoaded', init)
-var Dpotential = all_questions.filter(data{Difficulty} => user_difficulty <= Difficulty <= user_difficulty+3);
-console.log(Dpotential)
-function findQuestions(user_subjects, user_difficulty, user_sources) {
-  //var Spotential = data.filter(subject => [user_subjects].indexOf(subject) >= 0  );
-
-
-}
-
-div.insertAdjacentHTML('beforeend',"<div id="+ id + "> \
- <div class = 'alert alert-danger alert-dismissible ' id = 'alert-" + id +" role='alert'> \
- \
- <button type ='button' class='close' data-dismiss='alert' aria-label='Close'> \
- <span aria-hidden='true'>&times;</span>\
- </button> </div>\
- <h1>Problem " + c + "</h1>" + question + '<br><input type="text" id="input-' + id + '></input>\
-  <button class="btn btn-default" onclick="submit() type="button">Submit</button></div>');
+http://artofproblemsolving.com/wiki/index.php?title=2001_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2001_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2002_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2002_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2003_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2003_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2004_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2004_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2005_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2005_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2006_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2006_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2007_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2007_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2008_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2008_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2009_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2009_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2010_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2010_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2011_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2011_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2012_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2012_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2013_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2013_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2014_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2014_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2015_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2015_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2016_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2016_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2017_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2017_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2018_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2018_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2001_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2001_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2002_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2002_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2003_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2003_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2004_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2004_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2005_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2005_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2006_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2006_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2007_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2007_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2008_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2008_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2009_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2009_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2010_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2010_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2011_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2011_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2012_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2012_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2013_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2013_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2014_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2014_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2015_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2015_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2016_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2016_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2017_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2017_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2018_AIME_II_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2018_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2001_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2001_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2002_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2002_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2003_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2003_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2004_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2004_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2005_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2005_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2006_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2006_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2007_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2007_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2008_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2008_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2009_AIME_I_Problems
+https://artofproblemsolving.com/wiki/index.php?title=2009_AIME_Answer_Key
+http://artofproblemsolving.com/wiki/index.php?title=2010_AIME_I_Problems

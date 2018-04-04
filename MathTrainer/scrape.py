@@ -4,7 +4,6 @@ import requests
 import csv
 import json
 
-
 class Problem_Problem(object):
     problem = ""
     solution = ""
@@ -60,36 +59,108 @@ def find_number(contest):
         number = 15
     return number
 
-for contest in ("AMC 10", "AMC 12", "AIME"):
-    for year in range(2002,2018):
+for contest in ("AMC 10", "AMC 12"):
+    for year in range(2002,2019):
         for letter in ("A","B"):
-            page = ("http://artofproblemsolving.com/wiki/index.php?title={}_AMC_{}{}_Problems".format(year, 10, letter))
+            page = ("http://artofproblemsolving.com/wiki/index.php?title={}_{}_{}{}_Problems".format(year, contest[:-3], contest[-2:], letter))
+            print(page)
             html = requests.get(page,timeout=5)
             page_content = str(BeautifulSoup(html.content, "html.parser"))
             problems = page_content.split("mw-headline")
             end = find_number(contest)
-            for p in range(0,end):
+            solutions = "https://artofproblemsolving.com/wiki/index.php?title={}_AMC_{}{}_Answer_Key".format(year, 10, letter)
+            html = requests.get(solutions,timeout=5)
+            page_content = str(BeautifulSoup(html.content, "html.parser"))
+
+            solution = (page_content.split("mw-content-text"))[1]
+            solution = solution.split("</ol>")[0]
+            solution = solution.replace('" lang="en"><ol>','')
+            solution = solution.replace('<li>','')
+            solution = solution.replace('</li>','')
+            solutions = solution.split("\n")
+            for p in range(1,26):
                 problem = str(problems[p]).replace("<span class=","")
                 problem = problem.replace("<h2","")
                 problem = '<h2><span class="mw-headline" id {}'.format(problem)
                 problem = problem.replace('href="','href="https://artofproblemsolving.com')
                 problem = problem[:-2]
-                solutions = "https://artofproblemsolving.com/wiki/index.php?title={}_AMC_{}{}_Answer_Key".format(year, 10, letter)
-                html = requests.get(solutions,timeout=5)
-                page_content = str(BeautifulSoup(html.content, "html.parser"))
-                solution = (page_content.split("mw-content-text"))[1]
-                solution = solution.split("</ol>")[0]
-                solution = solution.replace('" lang="en"><ol>','')
-                solution = solution.replace('<li>','')
-                solution = solution.replace('</li>','')
-                solutions = solution.split("\n")
 
-                difficulty = find_difficulty(contest, p+1)
+
+                difficulty = find_difficulty(contest, p)
                 subject = "all"
+                problem = problem.replace('\n','')
 
-                problem = Problem_Problem(problem,solutions[p],"AMC 10",p+1,difficulty,subject)
+                problem = {"problem":problem,"solution":solutions[p-1].replace("<ol>",""),"source":contest,"number":p,"difficulty":difficulty,"subject":subject}
+
                 all_problems.append(problem)
 
+for year in range(1983,2000):
+    page = ("http://artofproblemsolving.com/wiki/index.php?title={}_{}_Problems".format(year, "AIME"))
+    print(page)
+    html = requests.get(page,timeout=5)
+    page_content = str(BeautifulSoup(html.content, "html.parser"))
+    problems = page_content.split("mw-headline")
+    end = find_number("AIME")
+    page_content = str(BeautifulSoup(html.content, "html.parser"))
 
+    solutions = "https://artofproblemsolving.com/wiki/index.php?title={}_{}_Answer_Key".format(year, "AIME")
+    html = requests.get(solutions,timeout=5)
+    sol_content = str(BeautifulSoup(html.content, "html.parser"))
+
+    solution = (str(sol_content).split("mw-content-text"))[1]
+    solution = solution.split("</ol>")[0]
+    solution = solution.replace('" lang="en"><ol>','')
+    solution = solution.replace('<li>','')
+    solution = solution.replace('</li>','')
+    solutions = solution.split("\n")
+
+
+    for p in range(1,16):
+            problem = str(problems[p]).replace("<span class=","")
+            problem = problem.replace("<h2","")
+            problem = '<h2><span class="mw-headline" id {}'.format(problem)
+            problem = problem.replace('href="','href="https://artofproblemsolving.com')
+            problem = problem[:-2]
+
+            difficulty = find_difficulty("AIME", p)
+            subject = "all"
+            problem = problem.replace('\n','')
+            problem = {"problem":problem,"solution":solutions[p+1].replace("<ol>",""),"source":"AIME","number":p,"difficulty":difficulty,"subject":subject}
+            all_problems.append(problem)
+
+for letter in ("I","II"):
+    for year in range(2001,2019):
+        page = ("http://artofproblemsolving.com/wiki/index.php?title={}_{}_{}_Problems".format(year, "AIME",letter))
+        print(page)
+        html = requests.get(page,timeout=5)
+        page_content = str(BeautifulSoup(html.content, "html.parser"))
+        problems = page_content.split("mw-headline")
+        end = find_number("AIME")
+        page_content = str(BeautifulSoup(html.content, "html.parser"))
+
+        solutions = "https://artofproblemsolving.com/wiki/index.php?title={}_{}_Answer_Key".format(year, "AIME")
+        html = requests.get(solutions,timeout=5)
+        sol_content = str(BeautifulSoup(html.content, "html.parser"))
+
+        solution = (str(sol_content).split("mw-content-text"))[1]
+        solution = solution.split("</ol>")[0]
+        solution = solution.replace('" lang="en"><ol>','')
+
+        for p in range(1,16):
+            problem = str(problems[p]).replace("<span class=","")
+            problem = problem.replace("<h2","")
+            problem = '<h2><span class="mw-headline" id {}'.format(problem)
+            problem = problem.replace('href="','href="https://artofproblemsolving.com')
+            problem = problem[:-2]
+
+            difficulty = find_difficulty("AIME", p)
+            subject = "all"
+            problem = problem.replace('\n','')
+            problem = {"problem":problem,"solution":solutions[p+1].replace("<ol>",""),"source":"AIME","number":p,"difficulty":difficulty,"subject":subject}
+            all_problems.append(problem)
+
+print(all_problems)
 with open('problems.txt', 'w') as outfile:
-    json.dump(all_problems,outfile)
+    for x in range(0,len(all_problems)):
+        outfile.write(json.dumps((all_problems[x]), indent=4))
+
