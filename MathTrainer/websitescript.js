@@ -192,4 +192,5 @@ Your answer is incorrect. We'll show you this problem again a little later. \
     if (c == 0){
       alert("Error: We don't have enough problems on this topic difficulty");
     }
+    alert("nut: " + c);
   }
