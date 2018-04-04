@@ -189,7 +189,7 @@ Your answer is incorrect. We'll show you this problem again a little later. \
       }
 
     }
-    if ( (c + 1) == 0){
-      alert("Error: We don't have enough problems on this topic difficulty" + c);
+    if (c < problem_number){
+      alert("Error: We don't have enough problems on this topic difficulty");
     }
   }
