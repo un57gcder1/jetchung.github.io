@@ -89,8 +89,8 @@ for contest in ("AMC 10", "AMC 12"):
                 difficulty = find_difficulty(contest, p)
                 subject = "all"
                 problem = problem.replace('\n','')
-
-                problem = {"problem":problem,"solution":solutions[p-1].replace("<ol>",""),"source":contest,"number":p,"difficulty":difficulty,"subject":subject}
+                id = "{}{}{}{}".format(contest,year,p,letter)
+                problem = {"problem":problem,"solution":solutions[p-1].replace("<ol>",""),"source":contest,"number":p,"difficulty":difficulty,"subject":subject,"id":id}
 
                 all_problems.append(problem)
 
@@ -125,7 +125,8 @@ for year in range(1983,2000):
             difficulty = find_difficulty("AIME", p)
             subject = "all"
             problem = problem.replace('\n','')
-            problem = {"problem":problem,"solution":solutions[p+1].replace("<ol>",""),"source":"AIME","number":p,"difficulty":difficulty,"subject":subject}
+            id = "AIME{}{}".format(year,p)
+            problem = {"problem":problem,"solution":solutions[p+1].replace("<ol>",""),"source":"AIME","number":p,"difficulty":difficulty,"subject":subject,"id":id}
             all_problems.append(problem)
 
 for letter in ("I","II"):
@@ -156,8 +157,15 @@ for letter in ("I","II"):
             difficulty = find_difficulty("AIME", p)
             subject = "all"
             problem = problem.replace('\n','')
-            problem = {"problem":problem,"solution":solutions[p+1].replace("<ol>",""),"source":"AIME","number":p,"difficulty":difficulty,"subject":subject}
+            id = "AIME{}{}{}".format(year,p,letter)
+            problem = {"problem":problem,"solution":solutions[p+1].replace("<ol>",""),"source":"AIME","number":p,"difficulty":difficulty,"subject":subject,"id":id}
             all_problems.append(problem)
+
+
+
+
+
+
 
 print(all_problems)
 with open('problems.txt', 'w') as outfile:

@@ -1,3 +1,13 @@
+
+var client = new XMLHttpRequest();
+client.open('GET', '/problems.txt');
+client.onreadystatechange = function() {
+  data = JSON.parse(client.responseText);
+}
+client.send();
+
+
+
 function cache() {
 
   solved = localStorage['solved']
@@ -9,10 +19,6 @@ function cache() {
   }
 
 
-  stored = localStorage['problems'];
-  if (stored) data = JSON.parse(stored);
-  else data = {};
-}
 
 
 window.onload = cache();
@@ -50,9 +56,7 @@ function init() {
 
 function showInfo(data, tabletop) {
 //  console.log(data);
-  localStorage['problems'] = JSON.stringify(data);
-
-
+  localStorage['problems.txt'] = JSON.stringify(data);
 
 
 
@@ -115,6 +119,8 @@ var G =  document.getElementById("Geometry").checked;
 var A =  document.getElementById("Algebra").checked;
 var N =  document.getElementById("Number Theory").checked;
 var C =  document.getElementById("Counting and Probability").checked;
+var All =  document.getElementById("All").checked;
+
 
   if (G){
     user_subjects.push("Geometry");
@@ -132,6 +138,10 @@ var C =  document.getElementById("Counting and Probability").checked;
   if (C){
     user_subjects.push("Counting and Probability");
 }
+  }
+  if (All){
+    user_subjects.push("All");
+}
 
   //  console.log(user_subjects);
 
@@ -144,11 +154,11 @@ var C =  document.getElementById("Counting and Probability").checked;
       if (Number(user_difficulty) <= Number(problem.Difficulty) + 1) {
       //  console.log(Number(problem.Difficulty), Number(user_difficulty), Number(problem.Difficulty) + 1);
 
-        if (user_subjects.includes(problem.Subject)) {
+        if (user_subjects.includes(problem.subject)) {
 
-            var answer = problem.Answer;
-            var question = problem.Question;
-            var id = problem.unique_ID;
+            var answer = problem.solution;
+            var question = problem.problem;
+            var id = problem.id;
             if (solved_dic.indexOf(id) < 0) {
               c += 1;
 
