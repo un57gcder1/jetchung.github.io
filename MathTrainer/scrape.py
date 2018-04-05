@@ -89,6 +89,8 @@ for contest in ("AMC 10", "AMC 12"):
                 difficulty = find_difficulty(contest, p)
                 subject = "all"
                 problem = problem.replace('\n','')
+                problem = problem.replace('"',r'\"')
+
                 id = "{}{}{}{}".format(contest,year,p,letter)
                 problem = {"problem":problem,"solution":solutions[p-1].replace("<ol>",""),"source":contest,"number":p,"difficulty":difficulty,"subject":subject,"id":id}
 
@@ -125,27 +127,34 @@ for year in range(1983,2000):
             difficulty = find_difficulty("AIME", p)
             subject = "all"
             problem = problem.replace('\n','')
+            problem = problem.replace('"',r'\"')
+
             id = "AIME{}{}".format(year,p)
             problem = {"problem":problem,"solution":solutions[p+1].replace("<ol>",""),"source":"AIME","number":p,"difficulty":difficulty,"subject":subject,"id":id}
             all_problems.append(problem)
 
 for letter in ("I","II"):
     for year in range(2001,2019):
+
         page = ("http://artofproblemsolving.com/wiki/index.php?title={}_{}_{}_Problems".format(year, "AIME",letter))
         print(page)
-        html = requests.get(page,timeout=5)
+        html = requests.get(page, timeout=5)
         page_content = str(BeautifulSoup(html.content, "html.parser"))
         problems = page_content.split("mw-headline")
         end = find_number("AIME")
         page_content = str(BeautifulSoup(html.content, "html.parser"))
 
-        solutions = "https://artofproblemsolving.com/wiki/index.php?title={}_{}_Answer_Key".format(year, "AIME")
-        html = requests.get(solutions,timeout=5)
+        solutions = "https://artofproblemsolving.com/wiki/index.php?title={}_{}_{}_Answer_Key".format(year, "AIME",letter)
+        html = requests.get(solutions, timeout=5)
         sol_content = str(BeautifulSoup(html.content, "html.parser"))
 
         solution = (str(sol_content).split("mw-content-text"))[1]
         solution = solution.split("</ol>")[0]
-        solution = solution.replace('" lang="en"><ol>','')
+        solution = solution.replace('" lang="en"><ol>', '')
+        solution = solution.replace('<li>', '')
+        solution = solution.replace('</li>', '')
+        solutions = solution.split("\n")
+
 
         for p in range(1,16):
             problem = str(problems[p]).replace("<span class=","")
@@ -153,12 +162,17 @@ for letter in ("I","II"):
             problem = '<h2><span class="mw-headline" id {}'.format(problem)
             problem = problem.replace('href="','href="https://artofproblemsolving.com')
             problem = problem[:-2]
-
+            if solutions[0] == "</p>":
+                n = p + 1
+            else:
+                n = p
+            print(solutions)
             difficulty = find_difficulty("AIME", p)
             subject = "all"
             problem = problem.replace('\n','')
+            problem = problem.replace('"',r'\"')
             id = "AIME{}{}{}".format(year,p,letter)
-            problem = {"problem":problem,"solution":solutions[p+1].replace("<ol>",""),"source":"AIME","number":p,"difficulty":difficulty,"subject":subject,"id":id}
+            problem = {"problem":problem,"solution":solutions[n-1].replace("<ol>",""),"source":"AIME","number":p,"difficulty":difficulty,"subject":subject,"id":id}
             all_problems.append(problem)
 
 
