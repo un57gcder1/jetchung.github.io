@@ -69,7 +69,7 @@ class activity(db.Model):
         return self.friday
 
     def __repr__(self):
-        return '<User %r>' % (self.username)
+        return '<User %r>' % self.username
 
 
 @app.route("/")

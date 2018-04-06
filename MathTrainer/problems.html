@@ -2,159 +2,169 @@
 <html lang="en">
 
 <head>
-  <title>MathTrainer</title>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="style.css">
+    <title>MathTrainer</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 
-  <meta name="google-signin-client_id" content="463533521183-dpgnfvqautbdaksruv0jn55n286het2u.apps.googleusercontent.com">
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <script src="websitescript.js"></script>
+    <meta name="google-signin-client_id"
+          content="463533521183-dpgnfvqautbdaksruv0jn55n286het2u.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="websitescript.js"></script>
 
 </head>
 
 <body background="/MathTrainer/background.png">
-  <div id="profile" style="margin: 0px;">
+<div id="profile" style="margin: 0px;">
 
     <nav class="navbar navbar-inverse">
 
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand">MathTrainer</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li class="navbar-left"><a href="index.html">Home</a></li>
-          <li class="navbar-left active"><a href="problems.html">Solve</a></li>
-          <li class="navbar-left"><a href="solved.html">Solved Problems</a></li>
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">MathTrainer</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="navbar-left"><a href="index.html">Home</a></li>
+                <li class="navbar-left active"><a href="problems.html">Solve</a></li>
+                <li class="navbar-left"><a href="solved.html">Solved Problems</a></li>
 
-          <li ><a href="about.html">About</a></li>
-        </ul>
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="">
-              <p id="demo"></p>
-            </a>
-          </li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="">
+                        <p id="demo"></p>
+                    </a>
+                </li>
 
-        </ul>
+            </ul>
 
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <p id="demo"></p>
-          </li>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <p id="demo"></p>
+                </li>
 
-          <li>
-            <a>
-              <div><img style="margin:5px" height="25px" id="profile_image" src="" /><b class="name"></b></div>
-            </a>
-          </li>
-          <li>
-            <a href="index.html">
+                <li>
+                    <a>
+                        <div><img style="margin:5px" height="25px" id="profile_image" src=""/><b class="name"></b></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
 
 
-              <script>
+                        <script>
                 function signOut() {
                   var auth2 = gapi.auth2.getAuthInstance();
                   auth2.signOut().then(function() {});
                 }
-              </script>
-              <button type="button" onClick=s ignOut() style="height:38px" class="btn btn-default btn-sm">
-                            <span class="glyphicon glyphicon-log-out"></span> Log out
-                          </button>
 
-            </a>
-          </li>
-          <li>
-            <a>
-              <div style="margin:0px" class="g-signin2" data-onsuccess="onSignIn"></div>
-            </a>
-          </li>
-        </ul>
-      </div>
+                        </script>
+                        <button type="button" onClick=s ignOut() style="height:38px" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-log-out"></span> Log out
+                        </button>
+
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div style="margin:0px" class="g-signin2" data-onsuccess="onSignIn"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <div class="container">
 
-      <div class="jumbotron">
-        <div class="container-fluid">
-          <div class="testform">
-            <!--  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1YzduLKwHfDYvbHAqpX-f8YW2fFuAXBHhEq-SH8l5LlPSQg/viewform?embedded=true" width="100%" height="1000px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
--->
-            <form id="create_test">
-              <h4>Level: <div class="slidecontainer">
-      <input type="range" min="1" max="10" value="50" class="slider" id="level">
-      </div></h4>
-              <p>
-              <h4>Number of Questions: <input class = "length" id="length" type ="number"></h4>
+        <div class="jumbotron">
+            <div class="container-fluid">
+                <div class="testform">
+                    <!--  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1YzduLKwHfDYvbHAqpX-f8YW2fFuAXBHhEq-SH8l5LlPSQg/viewform?embedded=true" width="100%" height="1000px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+        -->
+                    <form id="create_test">
+                        <h4>Level:
+                            <div class="slidecontainer">
+                                <input type="range" min="1" max="10" value="50" class="slider" id="level">
+                            </div>
+                        </h4>
+                        <p>
+                        <h4>Number of Questions: <input class="length" id="length" type="number"></h4>
 
 
-              <h4>Subjects: </h4>
-              <div class="form-check ">
-                <fieldset id="subjects">
+                        <h4>Subjects: </h4>
+                        <div class="form-check ">
+                            <fieldset id="subjects">
 
-                  <div>
-                    <input type="checkbox" id="Algebra" value="Algebra">
-                    <label for="Algebra">Algebra</label>
-                  </div>
-                  <div>
-                    <input type="checkbox" id="Counting and Probability" value="Counting and Probability">
-                    <label for="Counting and Probability">Counting and Probability</label>
-                  </div>
-                  <div>
-                    <input type="checkbox" id="Number Theory" value="Number Theory">
-                    <label for="Number Theory">Number Theory</label>
-                  </div>
-                  <div>
-                    <input type="checkbox" id="Geometry" name="interest" value="Geometry">
-                    <label for="Geometry">Geometry</label>
-                  </div>
-                                    <div>
-                    <input type="checkbox" id="All" name="interest" value="All">
-                    <label for="All">All</label>
-                  </div>
-                  <br>
-                    <a onclick="getData()" href="#"><button class="btn btn-default">Start Test</button></a>
-            </form>
+                                <div>
+                                    <input type="checkbox" id="Algebra" value="Algebra">
+                                    <label for="Algebra">Algebra</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="Counting and Probability"
+                                           value="Counting and Probability">
+                                    <label for="Counting and Probability">Counting and Probability</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="Number Theory" value="Number Theory">
+                                    <label for="Number Theory">Number Theory</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="Geometry" name="interest" value="Geometry">
+                                    <label for="Geometry">Geometry</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="All" name="interest" value="All">
+                                    <label for="All">All</label>
+                                </div>
+                                <br>
+                    </form>
+
+                    <button type='button' onclick="getData()" class="btn btn-default">Start Test</button>
 
 
+                    <div id="problems">
+                        <ul>
 
-            <div id="problems">
-              <ul>
+                        </ul>
+                    </div>
 
-              </ul>
+
+                    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+                    <script type='text/javascript'>
+                    </script>
+
+
+                    </container>
+                    </fieldset>
+                </div>
             </div>
-
-
-
-            <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-            <script type='text/javascript'>
-            </script>
-
-
-            </container>
-            </fieldset>
-            </div>
-          </div>
 
         </div>
 
 
-      </div>
-
-
     </div>
-  </div>
-  </div>
-  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</div>
+</div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
 </body>
