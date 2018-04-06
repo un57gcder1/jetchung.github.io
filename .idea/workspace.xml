@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="316ada67-f3e6-4d48-a238-9961144d7738" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/MathTrainer/problems.txt" afterPath="$PROJECT_DIR$/MathTrainer/problems.txt" />
-      <change beforePath="$PROJECT_DIR$/MathTrainer/scrape.py" afterPath="$PROJECT_DIR$/MathTrainer/scrape.py" />
-      <change beforePath="$PROJECT_DIR$/MathTrainer/websitescript.js" afterPath="$PROJECT_DIR$/MathTrainer/websitescript.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
