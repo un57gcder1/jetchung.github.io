@@ -1,6 +1,6 @@
 ---
 layout: post
-title: This is a big test
+title: 1995 IMO #2
 published: true
 ---
 
