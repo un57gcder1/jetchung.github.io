@@ -1,6 +1,6 @@
 ---
 layout: post
-title: This is a big test
+title: Inequalities
 published: true
 ---
 
