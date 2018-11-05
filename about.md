@@ -4,12 +4,13 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I'm Jet, a freshman at Wayland High School. I don't have that many hobbies, because I spend most of my time doing math.
+I also spend a lot of time on the forums of
+https://artofproblemsolving.com/community/user/329020">Art of Problem Solving. I like doing math stuff and putting off doing school stuff
 
-### More Information
+This blog is to keep track of any cool math problems I come across, as well as any math related experiences I have.
 
-A place to include any other types of information that you'd like to include about yourself.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[jetchung1@gmail.com](mailto:jetchung1@gmail.com)
