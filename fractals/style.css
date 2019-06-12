@@ -14,6 +14,21 @@
   /* color */
 }
 
+#canvas1 {
+  background:
+    top center / 200px 200px
+    /* position / size */
+    no-repeat
+    /* repeat */
+    fixed
+    /* attachment */
+    padding-box
+    /* origin */
+    content-box
+    /* clip */
+    white;
+  /* color */
+}
 .slidecontainer {
   width: 100%;
 }
@@ -53,13 +68,13 @@
 
 
 .footer1 {
-  float: left;
+  float: center;
   width: 100%;
-  padding: 10px 250px;
+  padding: 10px 275px;
 }
 
 .footer p {
-  float: left;
+  float: center;
   width: 100%;
   text-align: center;
 }

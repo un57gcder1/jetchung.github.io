@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+    <title>fractals</title>
     <meta charset="utf-8">
+    <link rel="icon" href="indexfavicon.ico">
 
 
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -11,22 +13,42 @@
     </style>
 </head>
 
-<body>
-    <canvas id="canvas" width="700" height="700"></canvas>
-
-    <div id="reet" class="slidecontainer">
-        <input onchange="makeAHomie()" class="slider" type="range" min="0" max="8" value="0" class="slider" id="reet1">
+<div class='parent flex-parent'>
+    <div class='child flex-child'>
+        <div id="hilbert">
+            <canvas id="canvas" width="700" height="700"></canvas>
+            <div id="reet" class="slidecontainer">
+                <input onchange="makeAHomie()" class="slider" type="range" min="0" max="8" value="0" class="slider"
+                    id="reet1">
+            </div>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+</div>
 
-    <footer>
+<!--    <div class='child flex-child' >
+            Both the true Hilbert curve and its discrete approximations are useful because they give a mapping between
+            1D and 2D space that preserves locality fairly well.[4] This means that two data points which are close to
+            each other in one-dimensional space are also close to each other after folding. The converse can't always be
+            true.
 
-        <div class="footer1">
-            Made with <span style="color: #A31F34;">&#9829;</span> by Armen
-        </div>
 
-    </footer>
+    </div>-->
+
+
+
+
+
+
+<script src="script.js"></script>
+
+<footer>
+
+    <div class="footer1">
+        Made with <span style="color: #A31F34;">&#9829;</span> by Armen
+    </div>
+
+</footer>
 </body>
 
 </html>

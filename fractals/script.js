@@ -2,6 +2,7 @@ var c = document.getElementById("canvas");
 var ctx = c.getContext("2d");
 var offset = 30;
 
+
 function last2bits(x) {
   return (x & 3);
 }
@@ -68,9 +69,8 @@ function reet(i, N) {
   //ctx.fillRect(20, 20, 150, 100);
   //ctx.fillRect(30,520,50,50);
 
-  var x_Total = 600
-  var y_Total = 600;
   var size = 600 / (N - 1);
+
   var x1 = prev[0] * size;
   var y1 = (prev[1] * size);
   var x2 = Math.abs(size * (curr[0]));

@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-<title>MathTrainer</title>  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>MathTrainer</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,7 +11,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="style.css">
 
-  <meta name="google-signin-client_id" content="463533521183-dpgnfvqautbdaksruv0jn55n286het2u.apps.googleusercontent.com">
+  <meta name="google-signin-client_id"
+    content="463533521183-dpgnfvqautbdaksruv0jn55n286het2u.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="websitescript.js"></script>
 
@@ -28,7 +30,7 @@
         <ul class="nav navbar-nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="problems.html">Solve</a></li>
-          <li ><a href="solved.html">Solved Problems</a></li>
+          <li><a href="solved.html">Solved Problems</a></li>
 
           <li class="active"><a href="about.html">About</a></li>
         </ul>
@@ -39,22 +41,21 @@
               <div><img style="margin:5px" height="25px" id="profile_image" src="" /><b class="name"></b></div>
             </a>
           </li>
-          <li><a href = "index.html">
+          <li><a href="index.html">
 
 
-            <script>
-              function signOut() {
-                var auth2 = gapi.auth2.getAuthInstance();
-                auth2.signOut().then(function () {
-                });
-              }
-            </script>
+              <script>
+                function signOut() {
+                  var auth2 = gapi.auth2.getAuthInstance();
+                  auth2.signOut().then(function () {});
+                }
+              </script>
 
-                      <button type="button" onClick = signOut() style="height:38px" class="btn btn-default btn-sm">
-                            <span class="glyphicon glyphicon-log-out"></span> Log out
-                          </button>
+              <button type="button" onClick=signOut() style="height:38px" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-log-out"></span> Log out
+              </button>
 
-          </a></li>
+            </a></li>
           <li>
             <a>
               <div style="margin:0px" class="g-signin2" data-onsuccess="onSignIn"></div>
@@ -65,41 +66,49 @@
     </nav>
     <div class="container">
 
-    <div class="jumbotron">
-      <div class = "container-fluid">
-        <h1>About</h1>
-        <p>I wanted to add the functionality of creating tests based on specific parameters and I wanted to give it an "update" in terms of design</p>
-        <h2>Q: Why do we need to sign in with Google?</h2>
-        <p>A: to store what problems you've done</p>
-        <h2>Q: Where is the data stored?</h2>
-        <p>In a spreadsheet in Google Spreadsheets that is read with JavaScript, also in the cache. Don't clear your cache.</p>
-        <p> Copyright (c) Jet Chung</p>
+      <div class="jumbotron">
+        <div class="container-fluid">
+          <h1>About</h1>
+          <p>I wanted to add the functionality of creating tests based on specific parameters and I wanted to give it an
+            "update" in terms of design</p>
+          <h2>Q: Why do we need to sign in with Google?</h2>
+          <p>A: to store what problems you've done</p>
+          <h2>Q: Where is the data stored?</h2>
+          <p>In a spreadsheet in Google Spreadsheets that is read with JavaScript, also in the cache. Don't clear your
+            cache.</p>
+          <p> Copyright (c) Jet Chung</p>
 
-      </div>
-      </div>
-
+        </div>
       </div>
 
-      <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
-      <script>
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyDJb2jtaBGqKlgAWWYsMy5NxRMSnnPVF6c",
-          authDomain: "mathtrainer-197423.firebaseapp.com",
-          databaseURL: "https://mathtrainer-197423.firebaseio.com",
-          projectId: "mathtrainer-197423",
-          storageBucket: "",
-          messagingSenderId: "303500931986"
-        };
-        firebase.initializeApp(config);
-      </script>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDJb2jtaBGqKlgAWWYsMy5NxRMSnnPVF6c",
+        authDomain: "mathtrainer-197423.firebaseapp.com",
+        databaseURL: "https://mathtrainer-197423.firebaseio.com",
+        projectId: "mathtrainer-197423",
+        storageBucket: "",
+        messagingSenderId: "303500931986"
+      };
+      firebase.initializeApp(config);
+    </script>
 
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    </body>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+      integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+      integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+      integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous">
+    </script>
+</body>
