@@ -143,7 +143,7 @@ async function reet(i, N) {
   //drawLine(x1,y1,x2,y2,0,HSVtoHex(((i / (N * N))), 1, 1))
 
   ctx.moveTo(x1, y1);
-  sleep(10).then(() => {
+  sleep(1000).then(() => {
     ctx.fillRect(offset + x1, offset + y1, 5, 5);
 
     ctx.fillStyle = HSVtoHex(((i / (N * N))), 1, .5);
