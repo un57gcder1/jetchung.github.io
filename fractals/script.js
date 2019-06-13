@@ -6,10 +6,11 @@ var prev = [offset, offset],
   curr;
 
 //calculating coordinates of the hilbert curve
+//get last 2 bits in binary representation to see where it goes in smaller node
 function last2bits(x) {
-  return (x & 3);
+  return (x % 4);
 }
-
+//had to look up some algorithm stuffs here so not really sure why bit shift...
 function hindex2xy(hindex, N) {
   var positions = [
     [0, 0],
@@ -143,7 +144,8 @@ async function reet(i, N) {
   //drawLine(x1,y1,x2,y2,0,HSVtoHex(((i / (N * N))), 1, 1))
 
   ctx.moveTo(x1, y1);
-  sleep(10000).then(() => {
+  //works accidentally
+  sleep(100).then(() => {
     ctx.fillRect(offset + x1, offset + y1, 5, 5);
 
     ctx.fillStyle = HSVtoHex(((i / (N * N))), 1, .5);
@@ -167,7 +169,6 @@ function makeAHomie() {
 
   var n = document.getElementById("reet1").value;
   var N = Math.pow(2, n);
-
   ctx.beginPath();
   ctx.stroke();
   //reet(4,16);
