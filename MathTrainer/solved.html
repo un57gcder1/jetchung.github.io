@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MathTrainer</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="google-signin-client_id"
+          content="463533521183-dpgnfvqautbdaksruv0jn55n286het2u.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="websitescript.js"></script>
+
+</head>
+
+<body background="/MathTrainer/background.png">
+<div id="profile" style="margin: 0px;">
+
+    <nav class="navbar navbar-inverse">
+
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">MathTrainer</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="problems.html">Solve</a></li>
+                <li class="active"><a href="solved.html">Solved Problems</a></li>
+
+                <li><a href="about.html">About</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a>
+                        <div><img style="margin:5px" height="25px" id="profile_image" src=""/><b class="name"></b></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+
+
+                        <script>
+                function signOut() {
+                  var auth2 = gapi.auth2.getAuthInstance();
+                  auth2.signOut().then(function() {});
+                }
+
+                        </script>
+
+                        <button type="button" onClick=signOut() style="height:38px" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-log-out"></span> Log out
+                        </button>
+
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div style="margin:0px" class="g-signin2" data-onsuccess="onSignIn"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+
+        <div class="jumbotron">
+            <div class="container-fluid">
+                <!--table of solved-->
+                <table>
+
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+</body>

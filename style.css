@@ -1,0 +1,378 @@
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+    color: #333;
+    text-shadow: none;
+    /* Prevent inheritance from `body` */
+    background-color: #fff;
+    border: .05rem solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+
+
+@media (min-width: 48em) {
+    .masthead-brand {
+        float: left;
+    }
+
+    .nav-masthead {
+        float: right;
+    }
+}
+
+
+/*
+ * Cover
+ */
+.cover {
+    padding: 0 1.5rem;
+}
+
+.cover .btn-lg {
+    padding: .75rem 1.25rem;
+    font-weight: 700;
+}
+
+
+/*
+ * Footer
+ */
+.mastfoot {
+    color: rgba(255, 255, 255, .5);
+}
+
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-google {
+    background: #dd4b39;
+    color: white;
+}
+
+.fa-github {
+    background: #913399;
+    color: white;
+}
+
+div.inputoutput {
+    top: 200px;
+    left: 300px;
+    width: 100%;
+    height: 300px;
+    border: 1px solid black;
+}
+
+
+
+@font-face {
+    font-family: "Courier Prime";
+    src: url("fonts/CourierPrime/CourierPrime.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Muli";
+    src: url("fonts/Muli/Muli-Regular.woff") format("woff");
+}
+
+html {
+    font-family: 'muli';
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    min-width: 500px;
+    min-height: 500px;
+    background-color: #060606;
+    letter-spacing: .5px
+}
+
+.page {
+    height: 100vh;
+    position: relative;
+    min-height: 500px;
+    background-color: #060606;
+    display: table;
+    width: 100%;
+}
+
+.divider {
+    width: 20vw;
+    border: 1px white solid;
+}
+
+.nav {
+    right: 0;
+    position: fixed;
+    height: 100vh;
+    width: 40px;
+    z-index: 10;
+    background-color: #060606;
+}
+
+.navtab {
+    height: 33.33vh;
+    outline: 4px solid black;
+    transition: background-color .3s ease-in-out;
+}
+
+.navtext {
+    position: absolute;
+    left: 33px;
+    transform-origin: left top 0;
+    transform: rotate(90deg);
+    width: 33.33vh;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    transition: color .3s ease-in-out;
+}
+
+a.body-link {
+    color: white;
+    padding: 2px 2px 1px;
+
+}
+
+a.body-link:hover {
+    background-color: white;
+    color: black;
+}
+
+a:focus {
+    outline: 0;
+}
+
+.headers {
+    font-size: 30px;
+    padding: 5px 0;
+    align: center;
+    width: 60%;
+}
+
+.content {
+    text-align: center;
+    color: white;
+    display: block;
+    margin: auto;
+}
+
+.title {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: table;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.underName {
+    stroke: white;
+    stroke-width: 4px;
+    display: block;
+    margin: auto;
+    left: calc(50% - 200px);
+    width: 0px;
+    height: 4px;
+    color: white;
+    transition: all .6s ease-in-out;
+}
+
+.name {
+    font-size: 80px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 2px #FFFFFF;
+    -webkit-text-fill-color: black;
+    display: table-cell;
+    vertical-align: middle;
+    letter-spacing: 3px;
+}
+
+.me {
+    font-size: 20px;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px;
+    width: 60%;
+}
+
+.me div {
+    width: 60%;
+    margin: auto;
+}
+
+.projectIcons {
+    cursor: pointer;
+    font-size: 0;
+    border-spacing: 0;
+    margin: 0;
+    padding: 0;
+    width: 40vw;
+    display: inline-block;
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.project {
+    background-color: #060606;
+    display: inline-block;
+    width: 33.2%;
+    min-height: 120px;
+    height: 15vh;
+    font-size: 80px;
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+.project:hover {
+    outline: 3px solid white;
+    z-index: 5;
+}
+
+#projectIntro {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.projectLetter {
+    transition: all .2s ease-in-out;
+    position: relative;
+    top: calc(50% - 55px);
+}
+
+.projectLetter:hover {
+    z-index: 5;
+}
+
+.projectText {
+    width: 45%;
+    display: none;
+    font-size: 16px;
+    position: relative;
+    overflow: auto;
+}
+
+.project-logo:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+
+.project-logo {
+    border: 2.5px gray solid;
+    border-radius: 50%;
+    margin-bottom: -16px;
+    width: 60px;
+    transition: all .4s ease-in-out;
+}
+
+.project-title {
+    font-size: 32px;
+    margin-left: 10px;
+}
+
+.random {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.code {
+    font-family: 'courier prime';
+    color: black;
+    background-color: white;
+    border-radius: 4px;
+    padding: 4px 2px 1px;
+    border: 1px black solid;
+    letter-spacing: 0px;
+    font-size: 14px;
+}
+
+.boldy {
+    color: black;
+    background-color: white;
+    padding: 2px 2px 1px;
+}
+
+.p {
+    color: white;
+    text-align: center;
+    width: 60%;
+}
+
+a,
+a:hover,
+a:active,
+a:visited {
+    color: white;
+}
+
+.aboutme {
+    padding: 10px;
+    margin: auto;
+    align: center;
+    width: 60%;
+    color: white;
+    text-align: center;
+
+
+    body {
+        margin: 0;
+    }
+
+    #menu {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        height: 75px;
+        background-color: #DDDDDD;
+        color: #FFFFFF;
+        z-index: 9999;
+        display: none;
+    }
+
+    body {
+        /*padding-top: 20px;*/
+        padding-bottom: 20px;
+    }
+
+    .navbar {
+        margin-bottom: 20px;
+    }
+
+    .btn-group {
+        align: right;
+    }
+
+    .btn {
+        align: right;
+    }

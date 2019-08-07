@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>scanner.io</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script type="text/javascript" src="sessionvars.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+</head>
+
+<body class="text-center">
+  <script src = "js/submit.js"></script>
+  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+
+
+    <main role="main" class="inner cover">
+      <br><br>
+      <h1 class="cover-heading">Upload</h1>
+      <p class="lead">Please vertify the information that we found:</p>
+      <p class="lead">
+      </p>
+
+      <form id="form">
+        <div class="form-group">
+          <label for="place">Place of Purchase</label>
+          <input type="text" class="form-control" id="place" placeholder="Place of Purchase">
+        </div>
+        <div class="form-group">
+          <label for="name">Name of Purchaser</label>
+          <input type="text" class="form-control" id="name" placeholder=name>
+        </div>
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" class="form-control" id="date" placeholder="Date">
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount in USD</label>
+          <input step=".01" type="number" id="amount" class="form-control" placeholder="Amount">
+        </div>
+
+      </form>
+      <script>
+      name = localStorage["name"];
+      document.getElementById("name").value = name;
+
+      </script>
+        <a href="javascript:writeUserData()" class="btn btn-sm btn-secondary">
+          Upload
+    </a>
+      <a href="index.html" class="btn btn-sm btn-secondary"><span class = "glyphicon glyphicon-home"></span></a>
+
+    </main>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+      </div>
+    </footer>
+    <!-- Add icon library -->
+
+    <br>
+
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src = "js/firebase.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>scanner.io</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--<script type="text/javascript" src="js/sessionvars.js"></script>-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src=js/index.js></script>
+  <script src=js/camera.js></script>
+
+
+</head>
+
+<body class="text-center">
+
+  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+
+  <!--  <script async src="opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>-->
+
+    <main role="main" class="inner cover">
+
+
+      <br>
+      <div>
+        <center>
+
+
+
+          <div class="inputoutput">
+
+            <div class="camera">
+              <video id="video">Video stream not available.</video>
+            </div>
+            <canvas id="canvas">
+              </canvas>
+            <div class="output">
+              <img id="photo" alt="The screen capture will appear in this box." style = "display:none">
+            </div>
+          </div>
+
+        </center>
+
+
+        <!--buttons-->
+        <hr>
+        <a href="upload.html" class="btn btn-lg btn-secondary"><span class = "glyphicon glyphicon-open"></span></a>
+
+        <a id="startbutton" class="btn btn-lg btn-secondary"><span class = "glyphicon glyphicon-camera"></span></a>
+        <a href="index.html" class="btn btn-lg btn-secondary"><span class = "glyphicon glyphicon-home"></span></a>
+
+        </a>
+    </main>
+
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+      </div>
+
+
+      </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src = "js/firebase.js"></script>
+</body>
+
+</html>
