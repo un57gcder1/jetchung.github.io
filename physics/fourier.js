@@ -4,8 +4,8 @@ var ctx = canvas.getContext("2d");
 var canvasCircles = document.getElementById("canvasCircles");
 var ctxC = canvasCircles.getContext("2d");
 
-ctx.fillStyle = "#FF0000";
-ctxC.fillStyle = "#FF0000";
+//ctx.fillStyle = "#FF0000";
+//ctxC.fillStyle = "#FF0000";
 
 function pX(t) {
   //return 0;
@@ -17,22 +17,21 @@ function pY(t) {
   return 13 * Math.cos(t * 2 * Math.PI) - 5 * Math.cos(2 * t * 2 * Math.PI) - 2 * Math.cos(3 * t * 2 * Math.PI) - Math.cos(4 * t * 2 * Math.PI);
 }
 
-function integrate(n) {
-  var m = 1000;
-  var n = 3;
-  var x = 0;
-  var y = 0;
-  for (i = 0; i < m; i++) {
-    //x += 1/m*Math.cos(-2*Math.PI*3*i/m);
-    x += 1 / m * (Math.cos(-2 * Math.PI * n * i / m) * pX(i / m) -
-      Math.sin((-2 * Math.PI * n * i / m)) * pY(i / m));
-    y += 1 / m * (Math.cos(-2 * Math.PI * n * i / m) * pY(i / m) +
-      Math.sin(-2 * Math.PI * n * i / m) * pX(i / m));
+
+var trailLength = 100;
+var termPositions = [];
+ 
+function storeLastPosition(x, y) {
+  termPositions.push({
+    x: x,
+    y: y
+  });
+ 
+  if (termPositions.length > trailLength) {
+    termPositions.shift();
   }
-  return [x, y];
 }
 
-t = 0;
 class obj {
 
   static x;
@@ -52,6 +51,7 @@ class obj {
     this.initAngle = initAngle
   }
 
+  
   draw(x_i, y_i) {
 
     var objectsDiv = document.getElementById("objects");
@@ -69,27 +69,31 @@ class obj {
 
       objectsDiv.insertBefore(newDiv, document.getElementById("obj"));
     }
-    // if (document.getElementsByClassName(this.id + "Circle").length == 0) {
-
-    //   var newDiv = document.createElement('div');
-
-    //   newDiv.setAttribute("class", this.id + "Circle");
-    //   newDiv.setAttribute("style", "position: absolute;  background: white; width:" + this.r + "px; height: " + this.r + "px;border-radius: 50%;");
-
-    //   objectsDiv.insertBefore(newDiv, document.getElementsByClassName(this.id)[0]);
-    // }
-
-    //objectsDiv.insertBefore(newDiv, document.getElementById(this.id));
 
     if (this.terminal) {
-      ctxC.fillStyle = "#ffff00";
+      storeLastPosition(x_i, y_i);
 
-      ctxC.beginPath();
 
-      ctxC.arc(x_i, y_i, 2, 0, Math.PI * 2, false);
+      for (var i = 0; i < termPositions.length; i++) {
+        var ratio = (i+1) / termPositions.length;
+          ctxC.beginPath();
 
-      ctxC.closePath();
-      ctxC.fill();
+          if (i == 0){
+            ctxC.fillStyle = "rgba(0, 0, 0, " + 1 + ")";
+            ctxC.arc(termPositions[i].x, termPositions[i].y, 6, 0, 2 * Math.PI, true);
+  
+          }
+          else{
+            ctxC.arc(termPositions[i].x, termPositions[i].y, 5, 0, 2 * Math.PI, true);
+            ctxC.fillStyle = "rgba(247, 202, 24, " + 1 + ")";
+  
+          }
+          ctxC.fill();
+          }
+         
+
+
+
     }
 
 
@@ -116,13 +120,6 @@ class obj {
 
   }
 
-  //make a function to draw all the circles after (this may be easier) + vector pointing from c_(n-1) to c_n
-  rotate() {
-    ctx.clearRect(0, 0, 1000, 700);
-    ctx.translate(this.x_i, this.y_i);
-    ctx.rotate(-1 * this.f);
-    ctx.translate(-1 * this.x_i, -1 * this.y_i);
-  }
 
   update() {
     t += 1;
@@ -130,7 +127,6 @@ class obj {
 
     this.y = this.r * Math.sin(this.f * t + this.initAngle) + 5;
     this.x = this.r * Math.cos(this.f * t + this.initAngle) + 5;
-    //this.rotate();
   }
 
   getX() {
@@ -147,29 +143,25 @@ class obj {
 }
 
 var objs = []
+var t = 0;
+var c = 15;
 
 for (n = -100; n < 100; n++) {
-  var m = 1000; //number of rectangles
+  var m = 1000;
   var x = 0;
   var y = 0;
   //likely error is in the integration
-  //c_n = integral_0 ^ 1 (f(t) * e^(-2pi * i * n * t))
+  //c_n = integral_0 ^ 1 (f(t) * e^(-2pi * i * n * t)) dt
   for (i = 0; i < m; i++) {
     x += 1 / m * (Math.cos(-2 * Math.PI * n * i / m) * pX(i / m) - Math.sin((-2 * Math.PI * n * i / m)) * pY(i / m));
     y -= 1 / m * (Math.cos(-2 * Math.PI * n * i / m) * pY(i / m) + Math.sin(-2 * Math.PI * n * i / m) * pX(i / m));
   }
-  // x = .05;
+
   var mag = Math.sqrt(x * x + y * y);
-
   var angle = Math.atan2(y, x);
-  if (Math.round(5 * mag) > 0) {
-    console.log(m, x, y);
 
-    objs.push(new obj(Math.round(mag * 15),
-      n / 500,
-      "obj" + n,
-      false,
-      angle));
+  if (Math.round(c * mag) > 0) {
+    objs.push(new obj(Math.round(c * mag), n/500, "obj" + n, false, angle));
   }
 }
 objs.push(new obj(0, (i) / 100, "term", true, 0));
@@ -178,6 +170,7 @@ function update() {
   for (i in objs) {
     objs[i].update();
   }
+
 }
 
 function draw() {
