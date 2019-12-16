@@ -3,10 +3,11 @@ var ctx = canvas.getContext("2d");
 ctx.fillStyle = "#FF0000";
 
 function pX(t) {
-  return 6 * Math.sin(t * 2 * Math.PI);
+  return Math.pow(Math.sin(t * 2 * Math.PI),1);
 }
 
 function pY(t) {
+  return Math.cos(2*Math.PI * t)
   return 13 * Math.cos(t * 2 * Math.PI) - 5 * Math.cos(2 * t * 2 * Math.PI) - 2 * Math.cos(3 * t * 2 * Math.PI) - Math.cos(4 * t * 2 * Math.PI);
 }
 
@@ -129,7 +130,7 @@ class obj {
 
   var objs = []
 
-  for (n = 0; n < 100; n++) {
+  for (n = -100; n < 100; n++) {
     var m = 1000; //number of rectangles
     var x = 0;
     var y = 0;
@@ -140,10 +141,10 @@ class obj {
     var mag = Math.sqrt(x * x + y * y);
 
     var angle = Math.atan(y / x);
-    console.log(Math.round(50 * mag), angle);
-    if (Math.round(50 * mag) > 0) {
+    console.log(Math.round(5 * mag), angle);
+    if (Math.round(5 * mag) > 0) {
       objs.push(new obj(Math.round(mag * 50),
-        (n) / 100,
+        (n) / 10,
         "obj" + n,
         false,
         angle));
