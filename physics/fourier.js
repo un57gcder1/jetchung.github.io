@@ -18,7 +18,7 @@ function pY(t) {
 }
 
 
-var trailLength = 100;
+var trailLength = 200;
 var termPositions = [];
  
 function storeLastPosition(x, y) {
@@ -77,17 +77,18 @@ class obj {
       for (var i = 0; i < termPositions.length; i++) {
         var ratio = (i+1) / termPositions.length;
           ctxC.beginPath();
-
+          var p = 45 * ratio + "%";
+          console.log(p);
+          ctxC.fillStyle = "hsl(50, 100%," +  p + ")";
           if (i == 0){
-            ctxC.fillStyle = "rgba(0, 0, 0, " + 1 + ")";
             ctxC.arc(termPositions[i].x, termPositions[i].y, 6, 0, 2 * Math.PI, true);
-  
+
           }
           else{
             ctxC.arc(termPositions[i].x, termPositions[i].y, 5, 0, 2 * Math.PI, true);
-            ctxC.fillStyle = "rgba(247, 202, 24, " + 1 + ")";
-  
+
           }
+          
           ctxC.fill();
           }
          
