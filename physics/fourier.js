@@ -4,34 +4,6 @@ var ctx = canvas.getContext("2d");
 var canvasCircles = document.getElementById("canvasCircles");
 var ctxC = canvasCircles.getContext("2d");
 
-//ctx.fillStyle = "#FF0000";
-//ctxC.fillStyle = "#FF0000";
-
-function pX(t) {
-  //return 0;
-  return 16 * Math.pow(Math.sin(t * 2 * Math.PI), 3);
-}
-
-function pY(t) {
-  //return 5*Math.cos(2*Math.PI * t)
-  return 13 * Math.cos(t * 2 * Math.PI) - 5 * Math.cos(2 * t * 2 * Math.PI) - 2 * Math.cos(3 * t * 2 * Math.PI) - Math.cos(4 * t * 2 * Math.PI);
-}
-
-
-var trailLength = 200;
-var termPositions = [];
- 
-function storeLastPosition(x, y) {
-  termPositions.push({
-    x: x,
-    y: y
-  });
- 
-  if (termPositions.length > trailLength) {
-    termPositions.shift();
-  }
-}
-
 class obj {
 
   static x;
@@ -43,14 +15,12 @@ class obj {
   static initAngle;
 
   constructor(r, f, id, terminal, initAngle) {
-
     this.r = r;
     this.f = f;
     this.id = id;
     this.terminal = terminal;
     this.initAngle = initAngle
   }
-
   
   draw(x_i, y_i) {
 
@@ -78,7 +48,7 @@ class obj {
         var ratio = (i+1) / termPositions.length;
           ctxC.beginPath();
           var p = 45 * ratio + "%";
-          ctxC.fillStyle = "hsl(50, 100%," +  p + ")";
+          ctxC.fillStyle = "hsl(320, 100%," +  p + ")";
           if (i == 0){
             ctxC.arc(termPositions[i].x, termPositions[i].y, 6, 0, 2 * Math.PI, true);
 
@@ -89,8 +59,8 @@ class obj {
           }
           
           ctxC.fill();
-          }
-         
+          }
+         
 
 
 
@@ -120,26 +90,44 @@ class obj {
 
   }
 
-
   update() {
-    t += 1;
     ctx.clearRect(0, 0, 1000, 700);
-
     this.y = this.r * Math.sin(this.f * t + this.initAngle) + 5;
     this.x = this.r * Math.cos(this.f * t + this.initAngle) + 5;
+    t += 1;
   }
 
   getX() {
     return this.x;
   }
+
   getY() {
     return this.y;
   }
-  moveTo(x, y) {
-    this.x_i = x;
-    this.y_i = y;
 
+}
+
+var trailLength = 200;
+var termPositions = [];
+ 
+function storeLastPosition(x, y) {
+  termPositions.push({
+    x: x,
+    y: y
+  });
+ 
+  if (termPositions.length > trailLength) {
+    termPositions.shift();
   }
+}
+
+
+function pX(t) {
+  return 16 * Math.pow(Math.sin(t * 2 * Math.PI), 3);
+}
+
+function pY(t) {
+  return 13 * Math.cos(t * 2 * Math.PI) - 5 * Math.cos(2 * t * 2 * Math.PI) - 2 * Math.cos(3 * t * 2 * Math.PI) - Math.cos(4 * t * 2 * Math.PI);
 }
 
 var objs = []
@@ -150,7 +138,7 @@ for (n = -100; n < 100; n++) {
   var m = 1000;
   var x = 0;
   var y = 0;
-  //likely error is in the integration
+
   //c_n = integral_0 ^ 1 (f(t) * e^(-2pi * i * n * t)) dt
   for (i = 0; i < m; i++) {
     x += 1 / m * (Math.cos(-2 * Math.PI * n * i / m) * pX(i / m) - Math.sin((-2 * Math.PI * n * i / m)) * pY(i / m));
@@ -164,6 +152,7 @@ for (n = -100; n < 100; n++) {
     objs.push(new obj(Math.round(c * mag), n/500, "obj" + n, false, angle));
   }
 }
+
 objs.push(new obj(0, (i) / 100, "term", true, 0));
 
 function update() {
@@ -174,15 +163,13 @@ function update() {
 }
 
 function draw() {
-  currentX = 500;
-  currentY = 350;
+  currentX = canvas.width/2;
+  currentY = canvas.height/2;
   for (i in objs) {
     objs[i].draw(currentX, currentY);
     currentX += objs[i].getX()
     currentY += objs[i].getY()
   }
-
-
 
 }
 MainLoop.setUpdate(update).setDraw(draw).start();
