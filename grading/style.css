@@ -1,0 +1,92 @@
+
+@font-face {
+    font-family: "Courier Prime";
+    src: url("fonts/CourierPrime/CourierPrime.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Muli";
+    src: url("fonts/Muli/Muli-Regular.woff") format("woff");
+}
+
+html {
+    font-family: 'muli';
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    min-width: 500px;
+    min-height: 500px;
+    background-color: #ffffff;
+    letter-spacing: .5px
+}
+
+.page {
+    height: 100vh;
+    position: relative;
+    min-height: 500px;
+    background-color: #060606;
+    display: table;
+    width: 100%;
+}
+
+.divider {
+    width: 20vw;
+    border: 1px white solid;
+}
+
+.nav {
+    right: 0;
+    position: fixed;
+    height: 100vh;
+    width: 40px;
+    z-index: 10;
+    background-color: #060606;
+}
+
+
+a.body-link {
+    color: white;
+    padding: 2px 2px 1px;
+
+}
+
+a.body-link:hover {
+    background-color: white;
+    color: black;
+}
+
+a:focus {
+    outline: 0;
+}
+
+.headers {
+    font-size: 30px;
+    padding: 5px 0;
+    align: center;
+    width: 60%;
+}
+
+
+.title {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: table;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.p {
+    color: white;
+    text-align: center;
+    width: 60%;
+}
+
+a,
+a:hover,
+a:active,
+a:visited {
+    color: white;
+}
