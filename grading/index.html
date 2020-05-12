@@ -1,98 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <title>Everaise Grading </title>
-
-    <meta name="google-signin-client_id" content="72536664697-d7nmv38v11n5t283eu9lhiqq3jfdav29.apps.googleusercontent.com">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-   <!--<link rel="stylesheet" type="text/css" href="style.css">--> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script type="text/javascript" src="jquery-1.4.4.min.js"></script>
-    <script type="text/javascript" src="google-spreadsheet.js"></script>
-
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("button").click(function(){
-    $.get("https://docs.google.com/spreadsheets/d/e/2PACX-1vRixLY7pRdkrITReQ8d-WXgRzUBFKy_DHG8VkjFmuDOYi3R6hP5QGGf7i2JYnA9mi3hB_mRsH2kiHOo/pubhtml", function(data, status){
-      alert("Data: " + data + "\nStatus: " + status);
-    });
-  });
-});
-</script>
+  <title>Google Sheets API Quickstart</title>
+  <meta charset="utf-8" />
 </head>
 
 <body>
-    </div>
+  <p>Google Sheets API Quickstart</p>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!--Add buttons to initiate auth sequence and sign out-->
+  <button id="authorize_button" style="display: none;">Authorize</button>
+  <button id="signout_button" style="display: none;">Sign Out</button>
+
+  <pre id="content" style="white-space: pre-wrap;"></pre>
+
+  <script type="text/javascript">
   
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <h4>Everaise Grading</h4>
-            </li>
-            <li class="nav-item">
-                <button onclick = addAssignment()>Update Assignments</button>
-            </li>
-            <li class="nav-item">
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-            </li>
-          </ul>
-
-        </div>
-      </nav>
+  </script>
 
 
-            
-
-    <section class="jumbotron text-center">
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm">
-                <div id = "gradingtodo">
-                    <div class = "test"></div>
-                    <div class = "test"></div>
-                    <div class = "test"></div>
-
-                <!-- <ol>
-                    <button>Student 35149 Math 1 Week 1 Day 3</button>
-                </ol>
-                <ol>
-                    <button>Student 35149 Math 1 Week 2 Day 1</button>
-                </ol>
-                <ol>
-                    <button>Student 35149 Math 1 Week 2 Day 2</button>
-                </ol> -->
-            </div>
-            </div>
-            <div class="col-sm">
-                <div id = "data">
-                    <div id = "student"><p>Student: </p></div>
-                    <div id = "assignment"></div><p>Assignment:</p>
-                    <div id = "url"><a href ="http://jetchung.github.io/">http://jetchung.github.io/</a></div>
-
-                </div>
-            </div>
-
-          </div>
-        
-      </div>
-      </section>
-
-
-    <button>Send an HTTP GET request to a page and get the result back</button>
-
-    <script src = main.js></script>
-   
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 
 </html>
