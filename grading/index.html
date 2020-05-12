@@ -1,25 +1,79 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-  <title>Google Sheets API Quickstart</title>
-  <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Everaise Submission</title>
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <p>Google Sheets API Quickstart</p>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Everaise Submission</a>
+        <button type="button" class="btn btn-primary" id="authorize_button" style="display: none;">Sign In</button>
 
-  <!--Add buttons to initiate auth sequence and sign out-->
-  <button id="authorize_button" style="display: none;">Authorize</button>
-  <button id="signout_button" style="display: none;">Sign Out</button>
+        <button type="button" class="btn btn-primary" id="signout_button" style="display: none;">Sign Out</button>
 
-  <pre id="content" style="white-space: pre-wrap;"></pre>
+        </div>
+    </nav>
 
-  <script type="text/javascript">
-  
-  </script>
+    <div class="jumbotron">
+        <h1>Everaise Submission</h1>
+        <hr class="my-4">
+        <div id="formcontainer">
 
+        <form id="form">
 
-</body>
+                <div class="form-group">
+
+                    <label for="teamname">Team Name</label>
+                    <input type="text" class="form-control" id="teamname" placeholder="Team name">
+                    <br>
+                    <label for="members">Team Members</label>
+                    <input type="text" class="form-control" id="members" placeholder="Team members">
+                    <br>
+                    <label for="gamecode">Game Code</label>
+                    <input type="text" class="form-control" id="gamecode" placeholder="Enter game code">
+
+                </div>
+
+            <button type = "button" onclick="submitCode()" class="btn btn-primary">Next</button>
+
+        </form>
+    </div>
+
+    </div>
+    <script src="game.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 
 </html>
