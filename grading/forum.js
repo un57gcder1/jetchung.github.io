@@ -55,19 +55,17 @@ function submitPost() {
     subject = document.getElementById("subject").value;
     content = document.getElementById("post").value;
 
-    if (subject.length < 8 || subject.length > 50 ) {
+    if (subject.length < 8 || subject.length > 50) {
         document.getElementById("subject-error").style = "";
-    }
-    else {
+    } else {
 
         document.getElementById("subject-error").style = "display:none;";
 
     }
 
-    if (content.length < 8 || content.length > 10000 ) {
+    if (content.length < 8 || content.length > 10000) {
         document.getElementById("post-error").style = "";
-    }
-    else {
+    } else {
 
         document.getElementById("post-error").style = "display:none;";
 
@@ -80,7 +78,31 @@ function submitPost() {
 
 function addPost(name, subject, date) {
     var posts = document.getElementById("posts");
-    $(posts).prepend('<br><div class="card"><div class="card-header alert-primary"><ul class="nav navbar nav-pills card-header-pills"><li class="nav-item"><h5 class="nav navbar-text">' +
-        subject + '</h5></li><li class="nav-item"><h6>Posted by ' + name + ' on ' + date + '</h6></li></ul></div></div><br>');
+    $(posts).prepend('<div class="card"><div class="card-header alert-primary"><ul class="nav navbar nav-pills card-header-pills"><li class="nav-item"><h5 class="nav navbar-text">' +
+        subject + '</h5></li><li class="nav-item"><h6>Posted by ' + name + ' on ' + date + '</h6></li></ul></div></div>');
 
 }
+
+
+document.getElementById("subject").addEventListener("input", function () {
+    subject = document.getElementById("subject").value;
+    if (subject.length >= 8 && subject.length <= 50) {
+        document.getElementById("subject-error").style = "display:none;";
+    }
+});
+
+
+document.getElementById("post").addEventListener("input", function () {
+    preview = document.getElementById("preview");
+    post1 = document.getElementById("post");
+    preview.innerText = post1.value
+    MathJax.typeset()
+    content = document.getElementById("post").value;
+    if (content.length >= 8 && content.length <= 10000) {
+        document.getElementById("post-error").style = "display:none;";
+    }
+
+
+});
+
+

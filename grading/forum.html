@@ -164,7 +164,7 @@
 
 
 
-                <br>
+
                 <div class="card-body">
                     <div class="input-group mb-3">
 
@@ -174,7 +174,7 @@
 
                     <div class="input-group mb-3">
 
-                        <input type="text" class="form-control" placeholder="Tags" aria-label="Username"
+                        <input id="tags" type="text" class="form-control" placeholder="Tags" aria-label="Username"
                             aria-describedby="basic-addon1">
                     </div>
 
@@ -182,8 +182,14 @@
 
                         <textarea id="post" class="form-control" placeholder="Post" aria-label="With textarea"
                             rows="5"></textarea>
+
                     </div>
                     <br>
+                    <div class="card">
+                        <div class="card-body"><p id="preview">Preview</p>
+                             
+                        </div>
+                    </div> <br>
                     <div id="subject-error" class="alert alert-warning  fade show" role="alert" style="display: none;">
                         <strong>Error:</strong> Your subject must be between 8 and 50 characters.
                         </button>
@@ -204,7 +210,7 @@
 
             </div>
             <br>
-            <div  id="posts">
+            <div id="posts">
 
                 <!---->
 
@@ -222,10 +228,9 @@
 
                         </ul>
                     </div>
- 
+
                 </div>
 
-                <br>
 
                 <div class="card">
                     <div class="card-header alert-primary">
@@ -247,7 +252,6 @@
 
                 </div>
 
-                <br>
             </div>
 
 
