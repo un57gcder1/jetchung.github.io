@@ -105,4 +105,19 @@ document.getElementById("post").addEventListener("input", function () {
 
 });
 
+function renderText(text){
+    text.replace("[b]","<b>");
+    text.replace("[/b]","</b>") 
+
+    text.replace("[i]","<i>");
+    text.replace("[/i]","</i>") 
+    
+    text.replace("[b]","<b>");
+    text.replace("[/b]","</b>") 
+    text.replace("[b]","<b>");
+
+    
+
+}
+
 
