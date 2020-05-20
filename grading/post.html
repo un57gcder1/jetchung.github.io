@@ -263,8 +263,40 @@
 
                 </div>
     </main>
-    <script src="forum.js"></script>
+    <script>
+        post = document.getElementById("post");
 
+        function bold() {
+            post.value += "[b][/b]"
+        }
+        
+        function underline() {
+            post.value += "[u][/u]"
+        }
+        
+        function italic() {
+            post.value += "[i][/i]"
+        }
+        
+        
+        function color(c) {
+            post.value += "[color=" + c + "][/color]"
+        }
+        
+        function hide(){
+            post.value += "[hide][/hide]"
+        
+        }
+        
+        function url(){
+            post.value += "[url][/url]"
+        
+        }
+        
+        function img(){
+            post.value += "[img][/img]"
+        
+        }</script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
