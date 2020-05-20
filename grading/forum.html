@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 
+
 <head>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -8,15 +9,23 @@
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
     <script src="https://use.fontawesome.com/0b137c3555.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>Everaise Forum</title>
+    <title>Everaise Submission</title>
 
 
     <style>
@@ -53,48 +62,6 @@
         <div class="jumbotron">
             <h1>Everaise Forum</h1>
             <hr class="my-4">
-            <!---->
-
-            <div class="card">
-                <div class="card-header alert-primary">
-                    <ul class="nav navbar nav-pills card-header-pills">
-                        <li class="nav-item">
-                            <h4 class="nav navbar-text">Class announcement</h4>
-                        </li>
-
-
-                    </ul>
-                </div>
-                <div class="card-body">
-                    <h6>Posted by Jet Chung on Wednesday, May 20, 2020</h6>
-
-                </div>
-
-            </div>
-
-            <br>
-
-            <div class="card">
-                <div class="card-header alert-primary">
-                    <ul class="nav navbar nav-pills card-header-pills">
-                        <li class="nav-item">
-                            <a href="post.html">
-                                <h4 class="nav navbar-text">Prove that Corona is a Virus</h4>
-                            </a>
-                        </li>
-
-
-                    </ul>
-                </div>
-                <div class="card-body">
-                    <h6>Posted by Aditya Arora on Wednesday, May 20, 2020</h6>
-
-                </div>
-
-            </div>
-            
-            <br>
-
             <div class="card" id="submit">
                 <div class="card-header alert-primary">
 
@@ -112,35 +79,96 @@
                                     class="fas fa-italic"></i></button>
                         </li>
 
-                        <li class="nav-item">
-                            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="italic()"><i
+                        <!--color-->
+
+
+
+                        <li class="nav-item dropdown">
+                            <button href="#" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown"><i
                                     class="fas fa-palette"></i></button>
+                            <ul class="dropdown-menu multi-column ">
+                                <div class="container">
+
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <ul class='list-inline'>
+
+                                                <ul class="multi-column-dropdown list-inline">
+                                                    <li class="nav-item">
+                                                        <a href="javascript:void(0)" onclick="color('#f00');"><i
+                                                                style="color:#f00; " class="fas fa-square"></i></a>
+                                                        <a href="javascript:void(0)" onclick="color('#ff9a00');"><i
+                                                                style="color:#ff9a00; " class="fas fa-square"></i></a>
+                                                        <a href="javascript:void(0)" onclick="color('#38761D');"><i
+                                                                style="color:#38761D; " class="fas fa-square"></i></a>
+                                                        <a href="javascript:void(0)" onclick="color('#00f');"><i
+                                                                style="color:#00f; " class="fas fa-square"></i></a>
+                                                        <a href="javascript:void(0)" onclick="color('#9a00ff');"><i
+                                                                style="color:#9a00ff; " class="fas fa-square"></i></a>
+                                                        <a href="javascript:void(0)" onclick="color('#aaa');"><i
+                                                                style="color:#aaa; " class="fas fa-square"></i></a>
+                                                        <a href="javascript:void(0)" onclick="color('#888');"><i
+                                                                style="color:#888; " class="fas fa-square"></i></a>
+
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="javascript:void(0)" onclick="color('#800000');"><i
+                                                                style="color:#800000; " class="fas fa-square"></i></a>
+                                                        <a href="javascript:void(0)" onclick="color('#783F04');"><i
+                                                                style="color:#783F04; " class="fas fa-square"></i></a>
+                                                        <a href="javascript:void(0)" onclick="color('#274E13');"><i
+                                                                style="color:#274E13; " class="fas fa-square"></i></a>
+                                                        <a href="javascript:void(0)" onclick="color('#001e7b');"><i
+                                                                style="color:#001e7b; " class="fas fa-square"></i></a>
+                                                        <a href="javascript:void(0)" onclick="color('#351C75');"><i
+                                                                style="color:#351C75; " class="fas fa-square"></i></a>
+                                                        <a href="javascript:void(0)" onclick="color('#444');"><i
+                                                                style="color:#444; " class="fas fa-square"></i></a>
+                                                        <a href="javascript:void(0)" onclick="color('#000');"><i
+                                                                style="color:#000; " class="fas fa-square"></i></a>
+
+
+                                                    </li>
+                                                </ul>
+                                            </ul>
+                                        </div>
+
+
+
+                                    </div>
+                            </ul>
+                        </li>
+
                         </li>
 
 
                         <li class="nav-item">
-                            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="italic()"><i
+                            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="hide()"><i
                                     class="fas fa-eye-slash"></i></button>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="italic()"><i
+                            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="url()"><i
                                     class="fas fa-link"></i></button>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="italic()"><i
+                            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="img()"><i
                                     class="fas fa-images"></i></button>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="italic()"><i
+                            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="attach()"><i
                                     class="fas fa-paperclip"></i></button>
                         </li>
                     </ul>
 
                 </div>
+
+
+
+                <br>
                 <div class="card-body">
                     <div class="input-group mb-3">
 
-                        <input type="text" class="form-control" placeholder="Subject" aria-label="Username"
+                        <input id="subject" type="text" class="form-control" placeholder="Subject" aria-label="Username"
                             aria-describedby="basic-addon1">
                     </div>
 
@@ -156,12 +184,77 @@
                             rows="5"></textarea>
                     </div>
                     <br>
-                    <button style="float:right;" type="button" class="btn btn-secondary">Submit</button>
+                    <div id="subject-error" class="alert alert-warning  fade show" role="alert" style="display: none;">
+                        <strong>Error:</strong> Your subject must be between 8 and 50 characters.
+                        </button>
+                    </div>
+                    <div id="post-error" class="alert alert-warning  fade show" role="alert" style="display: none;">
+                        <strong>Error:</strong> Your post must be between 8 and 10,000 characters.
+                        </button>
+                    </div>
+                    <div id="tag-error" class="alert alert-warning fade show" role="alert" style="display: none;">
+                        <strong>Error:</strong> You may not include more than 5 tags.
+                        </button>
+                    </div>
+                    <br>
+                    <button onclick="submitPost()" style="float:right;" type="button"
+                        class="btn btn-secondary">Submit</button>
 
                 </div>
 
             </div>
-            <!---->
+            <br>
+            <div class="container" id="posts">
+
+                <!---->
+
+                <div class="card">
+                    <div class="card-header alert-primary">
+                        <ul class="nav navbar nav-pills card-header-pills">
+                            <li class="nav-item">
+                                <h5 class="nav navbar-text">Class announcement</h5>
+                            <li class="nav-item">
+
+                                <h6>Posted by Jet Chung on May 20, 2020</h6>
+
+                            </li>
+
+
+                        </ul>
+                    </div>
+ 
+                </div>
+
+                <br>
+
+                <div class="card">
+                    <div class="card-header alert-primary">
+                        <ul class="nav navbar nav-pills card-header-pills">
+                            <li class="nav-item">
+                                <a href="post.html">
+                                    <h5 class="nav navbar-text">Prove that Corona is a Virus</h5>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+
+                                <h6>Posted by Aditya Arora on May 20, 2020</h6>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+                <br>
+            </div>
+
+
+
+
+        </div>
+        <!---->
 
 
         </div>
