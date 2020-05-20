@@ -1,0 +1,60 @@
+{
+
+    "problems": {
+
+        "set1": {
+            "1": {
+                "Number": "1",
+                "Question": "$12+23+34+\\cdots+78+89+91$.",
+                "Difficulty": "4",
+                "Answer": "1314"
+            },
+            "2": {
+                "Number": "2",
+                "Question": "Find the smallest positive integer with four times as many even as odd divisors.",
+                "Difficulty": "4",
+                "Answer": "16"
+
+            },
+
+            "3": {
+                "Number": "3",
+                "Question": "Isosceles triangle $ABC$ with $AB=AC$ is inscribed in a circle with radius $2$ such that the angle between the tangent lines to $A$ and $B$ is $60^{\\circ}$. The area of $ABC$ can be written in the form $m\\sqrt{n}$ where $m$ and $n$ are positive integers and $n$ is not divisible by the square of any prime. Find $m+n$.",
+                "Difficulty": "4",
+                "Answer": "6"
+
+            },
+            "4": {
+                "Number": "4",
+                "Question": "How many integer pairs $(x,y)$ satisfy $x^y=16$?",
+                "Difficulty": "4",
+                "Answer": "5"
+
+            }
+        },
+
+        "set2": {
+            "5": {
+                "Number": "5",
+                "Question": "Farmer John has some roosters and eggs. First, each rooster lays two eggs. He now has $21$ eggs. Next, each egg lays three roosters. If he now has $21$ eggs and $69$ roosters, how many total roosters and eggs did he originally have?",
+                "Difficulty": "6",
+                "Answer": "15"
+            },
+            "6": {
+                "Number": "6",
+                "Question":"Timmy is the $74$th person in line, and there are five people between him and and the person in the middle of the line. How many people are in the line?",
+                "Difficulty": "6",
+                "Answer": "136"
+            },
+            "7":{
+                "Number":"7",
+                "Question":"Given that $(r+s)\\cdot t = 99$ for prime numbers $r,s,t$, find the sum of all possible values of $(r+s)+t$.",
+                "Difficulty":"6",
+                "Answer":"56"
+            }
+        }
+
+
+    }
+
+}
