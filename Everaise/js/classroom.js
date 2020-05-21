@@ -112,6 +112,7 @@ function chatsubmit() {
     var chatlist = document.getElementById("chatlist");
     $(chatlist).prepend('<li ><b>Anonymous: </b>' + document.getElementById("chatbox").value + "</li>");
     MathJax.typeset();
+    document.getElementById("chatbox").value = "";
 
 
 }
