@@ -113,7 +113,7 @@ document.getElementById("post").addEventListener("input", function () {
     temp1 = temp.slice(temp.indexOf("[color=#"), )
     color1 = temp1.slice(8, temp1.indexOf("]"))
 
-    temp = temp.replace("[color=#" + color1 + "]", "<p style = 'color:" + color1 + "';>")
+    temp = temp.replace("[color=#" + color1 + "]", "<p style = 'color:#" + color1 + ";'>")
     temp = temp.replace("[/color]", "</p>")
 
 
