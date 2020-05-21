@@ -17,7 +17,7 @@ function italic() {
 function color(c) {
     post.value += "[color=" + c + "][/color]";
 
-    
+
 }
 
 function hide() {
@@ -99,20 +99,26 @@ document.getElementById("post").addEventListener("input", function () {
     post1 = document.getElementById("post");
     var temp = post1.value
 
-    temp = temp.replace("[b]","<b>");
-    temp = temp.replace("[/b]","</b>") 
+    temp = temp.replace("[b]", "<b>");
+    temp = temp.replace("[/b]", "</b>")
 
-    temp = temp.replace("[i]","<i>");
-    temp = temp.replace("[/i]","</i>") 
+    temp = temp.replace("[i]", "<i>");
+    temp = temp.replace("[/i]", "</i>")
 
-    temp = temp.replace("[u]","<u>");
-    temp = temp.replace("[/u]","</u>") 
+    temp = temp.replace("[u]", "<u>");
+    temp = temp.replace("[/u]", "</u>")
 
+    temp1 = temp.slice(temp.indexOf("[color=#"), )
+    color1 = temp1.slice(8, temp1.indexOf("]"))
 
+    temp = temp.replace("[color=#" + color1 + "]", "<p style = 'color:" + color1 + "';>")
+    temp = temp.replace("[/color]", "</p>")
+
+    console.log(temp)
 
 
     preview.innerHTML = temp;
-    MathJax.typeset();  
+    MathJax.typeset();
 
     content = document.getElementById("post").value;
     if (content.length >= 8 && content.length <= 10000) {
@@ -121,6 +127,3 @@ document.getElementById("post").addEventListener("input", function () {
 
 
 });
-
-
-
