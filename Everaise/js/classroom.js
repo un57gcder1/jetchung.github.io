@@ -124,7 +124,7 @@ $("#chatbox").on('keyup', function (e) {
 });
 var chat = document.getElementById("chats");
 
-canvas.style.left = chat.offsetWidth - 180;
+canvas.style.left = chat.offsetWidth - 180 + "px";
 board.width = chat.offsetWidth;
 
 $('#pensize').on('change', function () {
