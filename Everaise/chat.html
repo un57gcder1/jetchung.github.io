@@ -1,0 +1,308 @@
+i
+<!doctype html>
+<html lang="en">
+
+
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://use.fontawesome.com/0b137c3555.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Everaise Submission</title>
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        nav ul {
+            height: 170px;
+            width: 100%;
+        }
+
+        nav ul {
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+
+        .footer {
+            position: fixed;
+            width: 64%;
+
+        }
+
+        li.borderless {
+            border-top: 0 none;
+        }
+
+
+
+        #videoElement {
+
+            background-color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+        <a class="navbar-brand" href="#">Everaise Forum</a>
+
+        <div style="margin-left:auto; margin-right:0;">
+            <button type="button" class="btn btn-primary" id="authorize_button" style="display: none;">Sign In</button>
+            <button type="button" class="btn btn-primary" id="signout_button" style="display: none;">Sign Out</button>
+        </div>
+        </div>
+        <video style="display:none;" autoplay="true" id="video"></video>
+
+    </nav>
+    <br><br><br>
+
+    <div class="row">
+        <div class="col-10" style="padding-left: 30px;">
+            <div class="row">
+                <div class="col board" style="padding-left: 30px;height:450px">
+                    <div style="position: relative;">
+                        <canvas id="layer1"
+                            style="width: 100%; height: 450px; background-color: aliceblue;position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
+                        <canvas id="layer2"
+                            style="width: 240px; height: 180px; background-color: black;position: absolute; left:0;top: 0; z-index: 0;"></canvas>
+                    </div>
+
+                    <div style="position: absolute; top:20px; left:290px;">
+                        <button href="#" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown"><i
+                                class="fas fa-palette"></i></button>
+                        <ul class="dropdown-menu multi-column ">
+                            <div class="container">
+
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <ul class='list-inline'>
+
+                                            <ul class="multi-column-dropdown list-inline">
+                                                <li class="nav-item">
+                                                    <a href="javascript:void(0)" onclick="color('#f00');"><i
+                                                            style="color:#f00; " class="fas fa-square"></i></a>
+                                                    <a href="javascript:void(0)" onclick="color('#ff9a00');"><i
+                                                            style="color:#ff9a00; " class="fas fa-square"></i></a>
+                                                    <a href="javascript:void(0)" onclick="color('#38761D');"><i
+                                                            style="color:#38761D; " class="fas fa-square"></i></a>
+                                                    <a href="javascript:void(0)" onclick="color('#00f');"><i
+                                                            style="color:#00f; " class="fas fa-square"></i></a>
+                                                    <a href="javascript:void(0)" onclick="color('#9a00ff');"><i
+                                                            style="color:#9a00ff; " class="fas fa-square"></i></a>
+                                                    <a href="javascript:void(0)" onclick="color('#aaa');"><i
+                                                            style="color:#aaa; " class="fas fa-square"></i></a>
+                                                    <a href="javascript:void(0)" onclick="color('#888');"><i
+                                                            style="color:#888; " class="fas fa-square"></i></a>
+
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="javascript:void(0)" onclick="color('#800000');"><i
+                                                            style="color:#800000; " class="fas fa-square"></i></a>
+                                                    <a href="javascript:void(0)" onclick="color('#783F04');"><i
+                                                            style="color:#783F04; " class="fas fa-square"></i></a>
+                                                    <a href="javascript:void(0)" onclick="color('#274E13');"><i
+                                                            style="color:#274E13; " class="fas fa-square"></i></a>
+                                                    <a href="javascript:void(0)" onclick="color('#001e7b');"><i
+                                                            style="color:#001e7b; " class="fas fa-square"></i></a>
+                                                    <a href="javascript:void(0)" onclick="color('#351C75');"><i
+                                                            style="color:#351C75; " class="fas fa-square"></i></a>
+                                                    <a href="javascript:void(0)" onclick="color('#444');"><i
+                                                            style="color:#444; " class="fas fa-square"></i></a>
+                                                    <a href="javascript:void(0)" onclick="color('#000');"><i
+                                                            style="color:#000; " class="fas fa-square"></i></a>
+
+
+                                                </li>
+                                            </ul>
+                                        </ul>
+                                    </div>
+
+
+
+                                </div>
+                        </ul>
+                    </div>
+
+                    <div style="position: absolute; top:60px; left:290px;">
+                        <button href="#" class="btn btn-outline-dark ""><i
+                                class="fas fa-eraser"></i></button>
+                      
+                    </div>
+                    <div style="position: absolute; top:100px; left:290px;">
+                        <button href="#" class="btn btn-outline-dark "><i
+                                class="fas fa-trash"></i></button>
+                      
+                    </div>
+                    </canvas>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="padding-left: 30px;padding-top:20px;">
+                    <nav>
+                        <div class="card">
+                            <div class="card-body">
+
+                                <ul class=" list-group">
+                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
+                                    </li>
+                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
+                                    </li>
+                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
+                                    </li>
+                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
+                                    </li>
+                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
+                                    </li>
+                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
+                                    </li>
+                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
+                                    </li>
+                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
+                                    </li>
+                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
+                                    </li>
+                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
+                                    </li>
+                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
+                                    </li>
+                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
+                                    </li>
+
+                                    <li class="list-group-item"><b>Preston Fu:</b> Did she suck your nipples?</li>
+                                    <li class="list-group-item active"><b>Brian Lee:</b> Your per say</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+            </div>
+            <div class="row" style="padding-top:20px;">
+                <div class="col">
+                    <div class="footer">
+                        <div class="input-group mb-3">
+
+                            <input type="text" class="form-control" placeholder="Type your message"
+                                aria-label="Username" aria-describedby="basic-addon1">
+                            <div class="input-group-apppend">
+                                <button class="btn btn-primary" id="basic-addon1">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-2">
+            <div class="card">
+                <div class="card-body">
+
+                    <h4>Participants</h4>
+
+                    <ul class=" list-group" style="list-style: none; height:73.5vh;">
+                        <li class="borderless">
+                            <small>Preston Fu</small>
+                        </li>
+                        <li class="borderless">
+                            <small>Preston Fu</small>
+                        </li>
+                        <li class="borderless">
+                            <small>Preston Fu</small>
+                        </li>
+                        <li class="borderless">
+                            <small>Preston Fu</small>
+                        </li>
+                        <li class="borderless">
+                            <small>Preston Fu</small>
+                        </li>
+                        <li class="borderless">
+                            <small>Preston Fu</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+
+
+    </main>
+    <script src="chat.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD9A7ncLDqbdgowx76nPr0VzDDeIhSqg2c",
+            authDomain: "launch-8f860.firebaseapp.com",
+            databaseURL: "https://launch-8f860.firebaseio.com",
+            projectId: "launch-8f860",
+            storageBucket: "launch-8f860.appspot.com",
+            messagingSenderId: "219142134330",
+            appId: "1:219142134330:web:ac698c00a674f795987303",
+            measurementId: "G-MTDHW1R8D3"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+
+</body>
+
+</html>

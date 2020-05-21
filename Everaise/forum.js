@@ -35,7 +35,9 @@ function img() {
 
 }
 
+function attach(){
 
+}
 
 function submitPost() {
     var date = new Date()
@@ -114,8 +116,12 @@ document.getElementById("post").addEventListener("input", function () {
     temp = temp.replace("[color=#" + color1 + "]", "<p style = 'color:" + color1 + "';>")
     temp = temp.replace("[/color]", "</p>")
 
-    console.log(temp)
 
+    temp1 = temp.slice(temp.indexOf("[url]"), )
+    url1 =  "https://" + temp1.substring(5, temp1.length - 6)
+
+    temp = temp.replace("[url]", "<a href='" + url1 + "'>")
+    temp = temp.replace("[/url]", "</a>")
 
     preview.innerHTML = temp;
     MathJax.typeset();
@@ -127,3 +133,10 @@ document.getElementById("post").addEventListener("input", function () {
 
 
 });
+
+$('#fileinput').on('change',function(){
+    //get the file name
+    var fileName = $(this).val();
+    //replace the "Choose a file" label
+    $(this).next('.custom-file-label').html(fileName);
+})
