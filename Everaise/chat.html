@@ -7,6 +7,7 @@ i
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="http://zwibbler.com/zwibbler-demo.js"></script>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -71,6 +72,16 @@ i
 
             background-color: #666;
         }
+
+        .pchat {
+
+            font-size: 12;
+        }
+        .list-group-item{
+            font-size: 12;
+
+        }
+
     </style>
 </head>
 
@@ -94,15 +105,18 @@ i
             <div class="row">
                 <div class="col board" style="padding-left: 30px;height:450px">
                     <div style="position: relative;">
-                        <canvas id="layer1"
-                            style="width: 100%; height: 450px; background-color: aliceblue;position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
+
+                        <canvas id="layer1" height="450px" width="1160px"
+                            style="background-color: aliceblue;position: absolute; left: 0; top: 0; z-index: 0;display: block;"></canvas>
                         <canvas id="layer2"
-                            style="width: 240px; height: 180px; background-color: black;position: absolute; left:0;top: 0; z-index: 0;"></canvas>
+                            style="width: 180px; height: 135px; background-color: black;position: absolute;top: 0; z-index: 0;"></canvas>
+
                     </div>
 
-                    <div style="position: absolute; top:20px; left:290px;">
-                        <button href="#" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown"><i
-                                class="fas fa-palette"></i></button>
+                    <div id="whiteboard"></div>
+                    <div style="position: absolute; top:20px; left:35px;">
+                        <button href="#" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown"
+                            onclick="swaparoo()"><i class="fas fa-palette"></i></button>
                         <ul class="dropdown-menu multi-column ">
                             <div class="container">
 
@@ -156,16 +170,74 @@ i
                         </ul>
                     </div>
 
-                    <div style="position: absolute; top:60px; left:290px;">
-                        <button href="#" class="btn btn-outline-dark ""><i
-                                class="fas fa-eraser"></i></button>
-                      
+                    <div style="position: absolute; top:60px; left:35px;">
+                        <button href="#" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown"
+                            onclick="swaparoo()"><i class="fas fa-pen"></i></button>
+                        <ul class="dropdown-menu multi-column ">
+                            <div class="container">
+
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <ul class='list-inline'>
+
+                                            <ul class="multi-column-dropdown list-inline">
+                                                <li class="nav-item">
+                                                    <div class="slidecontainer">
+                                                        <input type="range" min="1" max="6" value="2" class="slider"
+                                                            id="pensize">
+                                                    </div>
+
+                                                </li>
+
+                                            </ul>
+                                        </ul>
+                                    </div>
+
+
+
+                                </div>
+                        </ul>
                     </div>
-                    <div style="position: absolute; top:100px; left:290px;">
-                        <button href="#" class="btn btn-outline-dark "><i
+
+
+                    <div style="position: absolute; top:100px; left:35px;">
+                        <button href="#" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown"><i
+                                class="fas fa-images"></i></button>
+
+                    </div>
+                    <div style="position: absolute; top:140px; left:35px;">
+                        <button href="#" class="btn btn-outline-dark" id="eraser" onclick="funceraser()"><i
+                                class=" fas fa-eraser"></i></button>
+
+                    </div>
+
+                    <div style="position: absolute; top:180px; left:35px;">
+                        <button href="#" class="btn btn-outline-dark active" id="marker" onclick="funcmarker()"><i
+                                class=" fas fa-marker"></i></button>
+
+                    </div>
+
+                    <div style="position: absolute; top:220px; left:35px;">
+                        <button href="#" class="btn btn-outline-dark " id="line" onclick="funcline()"><i
+                                class="fas fa-long-arrow-alt-right"></i></button>
+
+                    </div>
+                    <div style="position: absolute; top:260px; left:35px;">
+                        <button href="#" class="btn btn-outline-dark " id="square" onclick="funcsquare()"><i
+                                class="far fa-square"></i></button>
+
+                    </div>
+                    <div style="position: absolute; top:300px; left:35px;">
+                        <button href="#" class="btn btn-outline-dark " id="circle" onclick="funccircle()"><i
+                                class="far fa-circle"></i></button>
+
+                    </div>
+                    <div style="position: absolute; top:340px; left:35px;">
+                        <button href="#" class="btn btn-outline-dark " id="trash" onclick="functrash()"><i
                                 class="fas fa-trash"></i></button>
-                      
+
                     </div>
+
                     </canvas>
                 </div>
             </div>
@@ -173,36 +245,16 @@ i
                 <div class="col" style="padding-left: 30px;padding-top:20px;">
                     <nav>
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body" id="chats">
 
                                 <ul class=" list-group">
-                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
+                                    <li class="list-group-item">
+                                        <b>Jet Chung:</b> Just take it \(\pmod 2\)
                                     </li>
-                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
-                                    </li>
-                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
-                                    </li>
-                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
-                                    </li>
-                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
-                                    </li>
-                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
-                                    </li>
-                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
-                                    </li>
-                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
-                                    </li>
-                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
-                                    </li>
-                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
-                                    </li>
-                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
-                                    </li>
-                                    <li class="list-group-item borderless"><b>Jet Chung:</b> Just take it \(\pmod 2\)
+                                    <li class="list-group-item">
+                                        <b>Jet Chung:</b> Just take it \(\pmod 2\)
                                     </li>
 
-                                    <li class="list-group-item"><b>Preston Fu:</b> Did she suck your nipples?</li>
-                                    <li class="list-group-item active"><b>Brian Lee:</b> Your per say</li>
 
                                 </ul>
                             </div>
@@ -284,6 +336,7 @@ i
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+
 
     <script>
         // Your web app's Firebase configuration
