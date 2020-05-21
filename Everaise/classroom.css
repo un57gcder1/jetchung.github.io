@@ -1,0 +1,70 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+#chatnav ul {
+    height: 170px;
+    width: 100%;
+}
+
+nav ul {
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.footer {
+    position: fixed;
+    width: 64%;
+
+}
+
+li.borderless {
+    border-top: 0 none;
+}
+
+
+
+#videoElement {
+
+    background-color: #666;
+}
+
+.pchat {
+
+    font-size: 12;
+}
+
+.list-group-item {
+    font-size: 12;
+
+}
+
+#chatlist {
+    list-style: none;
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#chatcard {
+    height: 200px;
+}
+
+
+
+#chatlist>li {
+    -moz-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}

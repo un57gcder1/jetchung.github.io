@@ -28,13 +28,13 @@ function activate(item) {
 
 var tool = "pen";
 
-function swaparoo(){
-    if (eraser.className == "btn btn-outline-dark active"){
+function swaparoo() {
+    if (eraser.className == "btn btn-outline-dark active") {
         deactivate(eraser);
         activate(marker);
         deactivate(line);
         deactivate(square);
-        deactivate(circle); 
+        deactivate(circle);
     }
 }
 
@@ -108,17 +108,19 @@ function color(c) {
     penColor = c;
 }
 
+function chatsubmit() {
+    var chatlist = document.getElementById("chatlist");
+    $(chatlist).prepend('<li ><b>Anonymous: </b>' + document.getElementById("chatbox").value + "</li>");
+    MathJax.typeset();
 
-function pen() {
-    var tool = "pen";
 
 }
 
-function line() {
-    var tool = "line";
-}
-
-
+$("#chatbox").on('keyup', function (e) {
+    if (e.keyCode === 13) {
+        chatsubmit();
+    }
+});
 var chat = document.getElementById("chats");
 
 canvas.style.left = chat.offsetWidth - 180;
