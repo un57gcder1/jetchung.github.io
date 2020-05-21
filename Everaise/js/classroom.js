@@ -182,7 +182,7 @@ video.addEventListener('play', function () {
             canvas.height = video.videoHeight;
             canvas.getContext('2d').drawImage($this, 0, 0, canvas.width, canvas.height);
             setTimeout(loop, 1000 / 30);
-            canvas.style.left = chat.offsetWidth - 180;
+            canvas.style.left = chat.offsetWidth - 180 + "px";
         }
     })();
 }, 0);
