@@ -16,6 +16,8 @@ function italic() {
 
 function color(c) {
     post.value += "[color=" + c + "][/color]";
+
+    
 }
 
 function hide() {
@@ -95,8 +97,23 @@ document.getElementById("subject").addEventListener("input", function () {
 document.getElementById("post").addEventListener("input", function () {
     preview = document.getElementById("preview");
     post1 = document.getElementById("post");
-    preview.innerText = post1.value
-    MathJax.typeset()
+    var temp = post1.value
+
+    temp = temp.replace("[b]","<b>");
+    temp = temp.replace("[/b]","</b>") 
+
+    temp = temp.replace("[i]","<i>");
+    temp = temp.replace("[/i]","</i>") 
+
+    temp = temp.replace("[u]","<u>");
+    temp = temp.replace("[/u]","</u>") 
+
+
+
+
+    preview.innerHTML = temp;
+    MathJax.typeset();  
+
     content = document.getElementById("post").value;
     if (content.length >= 8 && content.length <= 10000) {
         document.getElementById("post-error").style = "display:none;";
@@ -105,19 +122,5 @@ document.getElementById("post").addEventListener("input", function () {
 
 });
 
-function renderText(text){
-    text.replace("[b]","<b>");
-    text.replace("[/b]","</b>") 
-
-    text.replace("[i]","<i>");
-    text.replace("[/i]","</i>") 
-    
-    text.replace("[b]","<b>");
-    text.replace("[/b]","</b>") 
-    text.replace("[b]","<b>");
-
-    
-
-}
 
 
