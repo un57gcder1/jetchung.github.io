@@ -1,0 +1,28 @@
+{
+  "name": "launch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JetChung/jetchung.github.io/Everaise"
+  },
+  "author": "Jet Chung",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.0.0"
+  },
+  "dependencies": {
+    "consolidate": "^0.15.1",
+    "express": "^4.17.1",
+    "firebase-admin": "^8.12.1",
+    "firebase-functions": "^3.6.1",
+    "handlebars": "^4.7.6"
+  },
+  "engines": {
+    "node": "10"
+  }
+}
