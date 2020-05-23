@@ -1,12 +1,3 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-
-import { Router, Route, Switch } from "react-router";
-
-import "./index.css";
-
-
-//
 const post = document.getElementById("post");
 var user = "Jet Chung";
 
@@ -46,7 +37,6 @@ function img() {
 
 
 function submitPost() {
-
     var date = new Date()
     date = date.getTime()
     const dateTimeFormat = new Intl.DateTimeFormat('en', {
@@ -89,7 +79,11 @@ function submitPost() {
 
 
 function addPost(author,date, postText, title, subject) {
-   var post = ForumPost(author,date, postText, title, subject);
+   
+
+    var posts = document.getElementById("posts");
+
+
 }
 
 
@@ -139,97 +133,3 @@ document.getElementById("post").addEventListener("input", function () {
 
 
 });
-//
-
-//helper functions
-
-
-function formatDate(date) {
-  return date.toLocaleDateString() + " at " + date.toLocaleTimeString();
-}
-
-function PostHeader(props) {
-  return (
-    <h6>
-      Posted by {props.author} on {formatDate(props.date)}
-    </h6>
-  );
-}
-
-function PostBody(props) {
-  return (
-    <div class="card-body alert-light">
-      <p>{props.postText}</p>
-
-      <br></br>
-    </div>
-  );
-}
-
-
-
-class ForumPost extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      totalDisplay: true,
-      postDisplay: false,
-    };
-  }
-  render() {
-    return (
-      <>
-        {this.state.totalDisplay ? (
-          <div class="card">
-            <div class="card-header alert-primary">
-              <ul class="nav navbar nav-pills card-header-pills">
-                <li class="nav-item">
-                  <button
-                    class="btn btn-link"
-                    onClick={() =>
-                      this.setState({
-                        postDisplay: this.state.postDisplay ? false : true,
-                      })
-                    }
-                  >
-                    <h5 class="nav navbar-text">{this.props.title}</h5>
-                  </button>
-                </li>
-                <li class="nav-item">
-                  <PostHeader user={this.props.author} date={this.props.date} />
-                </li>
-              </ul>
-            </div>
-          </div>
-        ) : (
-          ""
-        )}
-
-        {this.state.postDisplay ? (
-          <PostBody postText={this.props.postText} />
-        ) : (
-          ""
-        )}
-      </>
-    );
-  }
-}
-
-const content = (
-  <>
-              <ForumPost
-                totalDisplay={true}
-                postDisplay={false}
-                id={62}
-                date={new Date()}
-                title={"Prove that ABC"}
-                postText={"hello test test"}
-                author={"bob"}
-              />
-    
-  </>
-);
-
-ReactDOM.render(content, document.getElementById("root"));
-
-

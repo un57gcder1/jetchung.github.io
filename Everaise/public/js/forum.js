@@ -122,6 +122,15 @@ document.getElementById("post").addEventListener("input", function () {
 
     temp = temp.replace("[url]", "<a href='" + url1 + "'>")
     temp = temp.replace("[/url]", "</a>")
+//
+'"style="width:50%;display: block;margin: 0 auto;" ><br><br></br>'
+    temp1 = temp.slice(temp.indexOf("[url]"), )
+    url1 =  "https://" + temp1.substring(5, temp1.length - 6)
+
+    temp = temp.replace("[url]", "<a href='" + url1 + "'>")
+    temp = temp.replace("[/url]", "</a>")
+//
+
 
     preview.innerHTML = temp;
     MathJax.typeset();
